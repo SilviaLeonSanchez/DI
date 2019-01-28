@@ -1,6 +1,0 @@
-C:\Users\alumno\Documents\Visual Studio 2012\Projects\Clases\Clases\bin\Debug\Clases.exe.config
-C:\Users\alumno\Documents\Visual Studio 2012\Projects\Clases\Clases\obj\Debug\Clases.csprojResolveAssemblyReference.cache
-C:\Users\alumno\Documents\Visual Studio 2012\Projects\Clases\Clases\bin\Debug\Clases.exe
-C:\Users\alumno\Documents\Visual Studio 2012\Projects\Clases\Clases\bin\Debug\Clases.pdb
-C:\Users\alumno\Documents\Visual Studio 2012\Projects\Clases\Clases\obj\Debug\Clases.exe
-C:\Users\alumno\Documents\Visual Studio 2012\Projects\Clases\Clases\obj\Debug\Clases.pdb
