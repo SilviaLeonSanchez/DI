@@ -1,6 +1,0 @@
-c:\users\alumno\documents\visual studio 2012\Projects\Hola_mundo\Hola_mundo\bin\Debug\Hola_mundo.exe.config
-c:\users\alumno\documents\visual studio 2012\Projects\Hola_mundo\Hola_mundo\obj\Debug\Hola_mundo.csprojResolveAssemblyReference.cache
-c:\users\alumno\documents\visual studio 2012\Projects\Hola_mundo\Hola_mundo\bin\Debug\Hola_mundo.exe
-c:\users\alumno\documents\visual studio 2012\Projects\Hola_mundo\Hola_mundo\bin\Debug\Hola_mundo.pdb
-c:\users\alumno\documents\visual studio 2012\Projects\Hola_mundo\Hola_mundo\obj\Debug\Hola_mundo.exe
-c:\users\alumno\documents\visual studio 2012\Projects\Hola_mundo\Hola_mundo\obj\Debug\Hola_mundo.pdb

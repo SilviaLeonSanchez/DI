@@ -1,0 +1,17 @@
+C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\bin\Debug\Proyecto_Avituallamientos.exe.config
+C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\bin\Debug\Proyecto_Avituallamientos.exe
+C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\bin\Debug\Proyecto_Avituallamientos.pdb
+C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\obj\Debug\Proyecto_Avituallamientos.csprojResolveAssemblyReference.cache
+C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\obj\Debug\App.g.cs
+C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\obj\Debug\Proyecto_Avituallamientos_MarkupCompile.cache
+C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\obj\Debug\Proyecto_Avituallamientos.g.resources
+C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\obj\Debug\Proyecto_Avituallamientos.Properties.Resources.resources
+C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\obj\Debug\Proyecto_Avituallamientos.csproj.GenerateResource.Cache
+C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\obj\Debug\Proyecto_Avituallamientos.exe
+C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\obj\Debug\Proyecto_Avituallamientos.pdb
+C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\obj\Debug\NuevoMaterial.baml
+C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\obj\Debug\NuevoMaterial.g.cs
+C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\obj\Debug\MainWindow.baml
+C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\obj\Debug\MainWindow.g.cs
+C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\obj\Debug\Materiales.baml
+C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\obj\Debug\Materiales.g.cs

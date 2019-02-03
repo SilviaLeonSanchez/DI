@@ -1,0 +1,6 @@
+C:\Users\alumno\Documents\DI\Hola_mundo\Hola_mundo\bin\Debug\Hola_mundo.exe.config
+C:\Users\alumno\Documents\DI\Hola_mundo\Hola_mundo\bin\Debug\Hola_mundo.exe
+C:\Users\alumno\Documents\DI\Hola_mundo\Hola_mundo\bin\Debug\Hola_mundo.pdb
+C:\Users\alumno\Documents\DI\Hola_mundo\Hola_mundo\obj\Debug\Aplicacion_temperaturas.csprojResolveAssemblyReference.cache
+C:\Users\alumno\Documents\DI\Hola_mundo\Hola_mundo\obj\Debug\Hola_mundo.exe
+C:\Users\alumno\Documents\DI\Hola_mundo\Hola_mundo\obj\Debug\Hola_mundo.pdb
