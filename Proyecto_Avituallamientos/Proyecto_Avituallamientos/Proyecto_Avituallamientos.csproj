@@ -56,6 +56,12 @@
     <Compile Include="Avituallamientos.xaml.cs">
       <DependentUpon>Avituallamientos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\Avituallamiento.cs" />
+    <Compile Include="Modelos\Carrera.cs" />
+    <Compile Include="Modelos\Material.cs" />
+    <Compile Include="NuevaCarrera.xaml.cs">
+      <DependentUpon>NuevaCarrera.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NuevoMaterial.xaml.cs">
       <DependentUpon>NuevoMaterial.xaml</DependentUpon>
     </Compile>
@@ -67,6 +73,9 @@
     </Compile>
     <Compile Include="NuevoAvituallamiento.xaml.cs">
       <DependentUpon>NuevoAvituallamiento.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Carreras.xaml.cs">
+      <DependentUpon>Carreras.xaml</DependentUpon>
     </Compile>
     <Page Include="Avituallamientos.xaml">
       <SubType>Designer</SubType>
@@ -84,6 +93,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NuevaCarrera.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="NuevoMaterial.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -97,6 +110,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="NuevoAvituallamiento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Carreras.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

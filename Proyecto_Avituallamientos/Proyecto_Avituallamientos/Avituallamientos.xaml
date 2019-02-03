@@ -4,7 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Proyecto_Avituallamientos.Avituallamientos"
         Title="Avituallamientos" Height="480" Width="640">
     <Grid>
-        <Label x:Name="LabelNombreMaterial_Copy" Content="Materiales" Margin="10,29,8,0" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" Height="31" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <DataGrid Margin="50,82,50,0" VerticalAlignment="Top" Height="262">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Carrera" HeaderStringFormat="Carrera" Width="120"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Punto Km" HeaderStringFormat="Punto Km" Width="75"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Persona Contacto" HeaderStringFormat="Persona Contacto" Width="120"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Telefono Contacto" HeaderStringFormat="Telefono Contacto" Width="120"/>
+                <DataGridComboBoxColumn ClipboardContentBinding="{x:Null}" Header="Material" HeaderStringFormat="Material" SelectedValueBinding="{x:Null}" SelectedItemBinding="{x:Null}" TextBinding="{x:Null}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="ButtonAniadirAvituallamiento" Content="Añadir" Margin="147,360,386,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Height="29"/>
+        <Button x:Name="ButtonEditarAvituallamiento" Content="Editar" Margin="266,360,267,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Height="29"/>
+        <Button x:Name="ButtonBorrarAvituallamiento" Content="Borrar" Margin="385,360,148,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Height="29" Click="ButtonBorrarMaterial_Click"/>
+        <Label x:Name="LabelAvituallamientos" Content="Avituallamientos" Margin="10,29,8,0" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" Height="31" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <Button x:Name="ButtonVolver" Content="Volver" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

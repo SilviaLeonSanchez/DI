@@ -35,6 +35,5 @@
             </Grid>
         </Grid>
         <Button x:Name="ButtonNuevoAvituallamiento" Content="Nuevo Avituallamiento" Margin="227,386,227,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Height="29"/>
-
     </Grid>
 </Window>
