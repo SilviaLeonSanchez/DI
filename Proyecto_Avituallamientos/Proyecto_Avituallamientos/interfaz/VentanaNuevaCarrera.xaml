@@ -1,4 +1,4 @@
-﻿<Window x:Class="Proyecto_Avituallamientos.NuevaCarrera"
+﻿<Window x:Class="Proyecto_Avituallamientos.interfaz.VentanaNuevaCarrera"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Nueva Carrera" Height="480" Width="640" ResizeMode="NoResize">

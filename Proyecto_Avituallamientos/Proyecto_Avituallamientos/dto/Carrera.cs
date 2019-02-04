@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Proyecto_Avituallamientos.Modelos
+namespace Proyecto_Avituallamientos.dto
 {
     public class Carrera
     {

@@ -12,21 +12,28 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Proyecto_Avituallamientos
+namespace Proyecto_Avituallamientos.interfaz
 {
     /// <summary>
     /// Lógica de interacción para Window2.xaml
     /// </summary>
-    public partial class Window2 : Window
+    public partial class VentanaMateriales : Window
     {
-        public Window2()
+        public VentanaMateriales()
         {
             InitializeComponent();
         }
 
-        private void DataGrid_SelectionChanged_Material(object sender, SelectionChangedEventArgs e)
+        private void ButtonVolver_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
+
+        private void ButtonAniadirMaterial_Click(object sender, RoutedEventArgs e)
+        {
+            VentanaNuevoMaterial ventana = new VentanaNuevoMaterial();
+            ventana.ShowDialog();
+        }
+
     }
 }

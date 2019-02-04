@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Proyecto_Avituallamientos
+namespace Proyecto_Avituallamientos.dto
 {
     public class Avituallamiento
     {

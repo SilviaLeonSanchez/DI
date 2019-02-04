@@ -53,32 +53,32 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="interfaz\Avituallamientos.xaml.cs">
-      <DependentUpon>Avituallamientos.xaml</DependentUpon>
+    <Compile Include="interfaz\VentanaAvituallamientos.xaml.cs">
+      <DependentUpon>VentanaAvituallamientos.xaml</DependentUpon>
     </Compile>
     <Compile Include="dto\Avituallamiento.cs" />
     <Compile Include="dto\Carrera.cs" />
     <Compile Include="dto\Material.cs" />
     <Compile Include="logica\LogicaNegocio.cs" />
-    <Compile Include="interfaz\NuevaCarrera.xaml.cs">
-      <DependentUpon>NuevaCarrera.xaml</DependentUpon>
+    <Compile Include="interfaz\VentanaNuevaCarrera.xaml.cs">
+      <DependentUpon>VentanaNuevaCarrera.xaml</DependentUpon>
     </Compile>
-    <Compile Include="interfaz\NuevoMaterial.xaml.cs">
-      <DependentUpon>NuevoMaterial.xaml</DependentUpon>
+    <Compile Include="interfaz\VentanaNuevoMaterial.xaml.cs">
+      <DependentUpon>VentanaNuevoMaterial.xaml</DependentUpon>
     </Compile>
-    <Compile Include="interfaz\Materiales.xaml.cs">
-      <DependentUpon>Materiales.xaml</DependentUpon>
+    <Compile Include="interfaz\VentanaMateriales.xaml.cs">
+      <DependentUpon>VentanaMateriales.xaml</DependentUpon>
     </Compile>
-    <Compile Include="interfaz\AniadirMaterial.xaml.cs">
-      <DependentUpon>AniadirMaterial.xaml</DependentUpon>
+    <Compile Include="interfaz\VentanaAniadirMaterial.xaml.cs">
+      <DependentUpon>VentanaAniadirMaterial.xaml</DependentUpon>
     </Compile>
-    <Compile Include="interfaz\NuevoAvituallamiento.xaml.cs">
-      <DependentUpon>NuevoAvituallamiento.xaml</DependentUpon>
+    <Compile Include="interfaz\VentanaNuevoAvituallamiento.xaml.cs">
+      <DependentUpon>VentanaNuevoAvituallamiento.xaml</DependentUpon>
     </Compile>
-    <Compile Include="interfaz\Carreras.xaml.cs">
-      <DependentUpon>Carreras.xaml</DependentUpon>
+    <Compile Include="interfaz\VentanaCarreras.xaml.cs">
+      <DependentUpon>VentanaCarreras.xaml</DependentUpon>
     </Compile>
-    <Page Include="interfaz\Avituallamientos.xaml">
+    <Page Include="interfaz\VentanaAvituallamientos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -94,27 +94,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="interfaz\NuevaCarrera.xaml">
+    <Page Include="interfaz\VentanaNuevaCarrera.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="interfaz\NuevoMaterial.xaml">
+    <Page Include="interfaz\VentanaNuevoMaterial.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="interfaz\Materiales.xaml">
+    <Page Include="interfaz\VentanaMateriales.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="interfaz\AniadirMaterial.xaml">
+    <Page Include="interfaz\VentanaAniadirMaterial.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="interfaz\NuevoAvituallamiento.xaml">
+    <Page Include="interfaz\VentanaNuevoAvituallamiento.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="interfaz\Carreras.xaml">
+    <Page Include="interfaz\VentanaCarreras.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

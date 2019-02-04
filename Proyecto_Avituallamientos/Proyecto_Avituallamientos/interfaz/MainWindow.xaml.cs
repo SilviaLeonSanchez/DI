@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Proyecto_Avituallamientos
+namespace Proyecto_Avituallamientos.interfaz
 {
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
@@ -23,7 +23,14 @@ namespace Proyecto_Avituallamientos
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = this;
+        }
+
+        private void ButtonVerMaterial_Click(object sender, RoutedEventArgs e)
+        {
+            VentanaMateriales ventana = new VentanaMateriales();
+            ventana.ShowDialog();
+            
+
         }
 
     }

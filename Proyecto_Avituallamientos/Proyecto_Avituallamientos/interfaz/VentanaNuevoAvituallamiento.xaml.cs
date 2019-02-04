@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Proyecto_Avituallamientos
+namespace Proyecto_Avituallamientos.interfaz
 {
     /// <summary>
-    /// Lógica de interacción para Window5.xaml
+    /// Lógica de interacción para Window4.xaml
     /// </summary>
-    public partial class Window5 : Window
+    public partial class VentanaNuevoAvituallamiento : Window
     {
-        public Window5()
+        public VentanaNuevoAvituallamiento()
         {
             InitializeComponent();
         }

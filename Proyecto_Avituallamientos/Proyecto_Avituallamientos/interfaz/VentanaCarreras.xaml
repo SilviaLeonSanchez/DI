@@ -1,4 +1,4 @@
-﻿<Window x:Class="Proyecto_Avituallamientos.Window5"
+﻿<Window x:Class="Proyecto_Avituallamientos.interfaz.VentanaCarreras"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Carreras" Height="480" Width="640">

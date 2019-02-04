@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Proyecto_Avituallamientos
+namespace Proyecto_Avituallamientos.interfaz
 {
     /// <summary>
-    /// Lógica de interacción para NuevaCarrera.xaml
+    /// Lógica de interacción para Window3.xaml
     /// </summary>
-    public partial class NuevaCarrera : Window
+    public partial class VentanaAniadirMaterial : Window
     {
-        public NuevaCarrera()
+        public VentanaAniadirMaterial()
         {
             InitializeComponent();
         }

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\App.xaml
-8-2102842884
+8-904057607
 
-20-533363627
+20-1095666979
 12-1401562060
-interfaz\Avituallamientos.xaml;interfaz\MainWindow.xaml;interfaz\NuevaCarrera.xaml;interfaz\NuevoMaterial.xaml;interfaz\Materiales.xaml;interfaz\AniadirMaterial.xaml;interfaz\NuevoAvituallamiento.xaml;interfaz\Carreras.xaml;
+interfaz\VentanaAvituallamientos.xaml;interfaz\MainWindow.xaml;interfaz\VentanaNuevaCarrera.xaml;interfaz\VentanaNuevoMaterial.xaml;interfaz\VentanaMateriales.xaml;interfaz\VentanaAniadirMaterial.xaml;interfaz\VentanaNuevoAvituallamiento.xaml;interfaz\VentanaCarreras.xaml;
 
 False
 

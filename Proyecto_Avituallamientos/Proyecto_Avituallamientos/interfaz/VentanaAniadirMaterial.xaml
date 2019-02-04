@@ -1,4 +1,4 @@
-﻿<Window x:Class="Proyecto_Avituallamientos.Window3"
+﻿<Window x:Class="Proyecto_Avituallamientos.interfaz.VentanaAniadirMaterial"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
          Title="Editar Lista De Material" Height="480" Width="640" ResizeMode="NoResize">
