@@ -23,6 +23,7 @@ namespace Proyecto_Avituallamientos
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = this;
         }
 
     }
