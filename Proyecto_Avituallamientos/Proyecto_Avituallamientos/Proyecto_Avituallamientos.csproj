@@ -53,35 +53,36 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Avituallamientos.xaml.cs">
+    <Compile Include="interfaz\Avituallamientos.xaml.cs">
       <DependentUpon>Avituallamientos.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Modelos\Avituallamiento.cs" />
-    <Compile Include="Modelos\Carrera.cs" />
-    <Compile Include="Modelos\Material.cs" />
-    <Compile Include="NuevaCarrera.xaml.cs">
+    <Compile Include="dto\Avituallamiento.cs" />
+    <Compile Include="dto\Carrera.cs" />
+    <Compile Include="dto\Material.cs" />
+    <Compile Include="logica\LogicaNegocio.cs" />
+    <Compile Include="interfaz\NuevaCarrera.xaml.cs">
       <DependentUpon>NuevaCarrera.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NuevoMaterial.xaml.cs">
+    <Compile Include="interfaz\NuevoMaterial.xaml.cs">
       <DependentUpon>NuevoMaterial.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Materiales.xaml.cs">
+    <Compile Include="interfaz\Materiales.xaml.cs">
       <DependentUpon>Materiales.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AniadirMaterial.xaml.cs">
+    <Compile Include="interfaz\AniadirMaterial.xaml.cs">
       <DependentUpon>AniadirMaterial.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NuevoAvituallamiento.xaml.cs">
+    <Compile Include="interfaz\NuevoAvituallamiento.xaml.cs">
       <DependentUpon>NuevoAvituallamiento.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Carreras.xaml.cs">
+    <Compile Include="interfaz\Carreras.xaml.cs">
       <DependentUpon>Carreras.xaml</DependentUpon>
     </Compile>
-    <Page Include="Avituallamientos.xaml">
+    <Page Include="interfaz\Avituallamientos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="interfaz\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -89,31 +90,31 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="interfaz\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="NuevaCarrera.xaml">
+    <Page Include="interfaz\NuevaCarrera.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="NuevoMaterial.xaml">
+    <Page Include="interfaz\NuevoMaterial.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Materiales.xaml">
+    <Page Include="interfaz\Materiales.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AniadirMaterial.xaml">
+    <Page Include="interfaz\AniadirMaterial.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="NuevoAvituallamiento.xaml">
+    <Page Include="interfaz\NuevoAvituallamiento.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Carreras.xaml">
+    <Page Include="interfaz\Carreras.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
