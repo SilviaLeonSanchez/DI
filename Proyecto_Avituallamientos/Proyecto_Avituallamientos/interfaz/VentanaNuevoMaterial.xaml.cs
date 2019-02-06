@@ -20,11 +20,20 @@ namespace Proyecto_Avituallamientos.interfaz
     /// </summary>
     public partial class VentanaNuevoMaterial : Window
     {
-        public Material material_nuevo;
+        public Material material_nuevo {get; set;}
 
         public VentanaNuevoMaterial()
         {
             InitializeComponent();
+            this.material_nuevo = new Material();
+            this.DataContext = logica.LogicaNegocio.GetInstance();
+            
+        }
+        public VentanaNuevoMaterial(Material material)
+        {
+            InitializeComponent();
+            this.material_nuevo = material;
+            this.DataContext = logica.LogicaNegocio.GetInstance();
         }
 
         private void ButtonVolver_Click(object sender, RoutedEventArgs e)
@@ -34,10 +43,6 @@ namespace Proyecto_Avituallamientos.interfaz
 
         private void ButtonNuevoMaterial_Click(object sender, RoutedEventArgs e)
         {
-            string nombre = this.TextBoxNombreMaterial.Text;
-            TIPO_MATERIAL tipo = (TIPO_MATERIAL) this.ComboBoxTipoMaterial.SelectedItem;
-            double precio = Convert.ToDouble(this.TextBoxPrecio.Text);
-            material_nuevo = new Material(nombre, tipo, precio);
             logica.LogicaNegocio.GetInstance().ListaMateriales.Add(material_nuevo);
         }
     }

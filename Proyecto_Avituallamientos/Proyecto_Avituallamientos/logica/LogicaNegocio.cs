@@ -13,6 +13,7 @@ namespace Proyecto_Avituallamientos.logica
         // ATRIBUTOS
         public ObservableCollection<Carrera> ListaCarreras { get; set; }
         public ObservableCollection<Material> ListaMateriales {get; set;}
+        public ObservableCollection<String> TipoMaterial { get; set; }
 
         
 
@@ -30,9 +31,13 @@ namespace Proyecto_Avituallamientos.logica
         {
             ListaMateriales = new ObservableCollection<Material>();
             ListaCarreras = new ObservableCollection<Carrera>();
+            TipoMaterial = new ObservableCollection<String>();
+            TipoMaterial.Add("Bebida"); 
+            TipoMaterial.Add("Comida");
+            TipoMaterial.Add("Material sanitario");
 
-            ListaMateriales.Add(new Material("Redbull",TIPO_MATERIAL.BEBIDA, 2.00));
-            ListaMateriales.Add(new Material("Panchitos",TIPO_MATERIAL.COMIDA, 1.50));
+            ListaMateriales.Add(new Material("Redbull",TipoMaterial[0], 2.00));
+            ListaMateriales.Add(new Material("Panchitos", TipoMaterial[1], 1.50));
         }
 
         // METODOS 

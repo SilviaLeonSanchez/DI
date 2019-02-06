@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Proyecto_Avituallamientos.dto;
+using Proyecto_Avituallamientos.logica;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +22,12 @@ namespace Proyecto_Avituallamientos.interfaz
     /// </summary>
     public partial class VentanaMateriales : Window
     {
+
+
         public VentanaMateriales()
         {
             InitializeComponent();
+            this.DataContext = LogicaNegocio.GetInstance();
         }
 
         private void ButtonVolver_Click(object sender, RoutedEventArgs e)
@@ -34,6 +40,7 @@ namespace Proyecto_Avituallamientos.interfaz
             VentanaNuevoMaterial ventana = new VentanaNuevoMaterial();
             ventana.ShowDialog();
         }
+
 
     }
 }

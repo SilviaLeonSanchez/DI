@@ -4,12 +4,13 @@
          Title="Materiales" Height="480" Width="640" ResizeMode="NoResize">
     <Grid Height="451" VerticalAlignment="Top">
         <Button x:Name="ButtonAniadirMaterial" Content="Añadir" Margin="150,387,385,35" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonAniadirMaterial_Click"/>
-        <Label x:Name="LabelNombreMaterial_Copy" Content="Materiales" Margin="10,29,10,0" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" Height="31" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
-        <DataGrid AutoGenerateColumns="True" Margin="36,80,36,0" VerticalAlignment="Top" Height="289" ItemsSource="{Binding Proyecto_Avituallamientos.logica.LogicaNegocio.getInstance().ListaMateriales}" >
+        <Label x:Name="LabelTituloMaterial" Content="Materiales" Margin="10,29,10,0" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" Height="31" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <DataGrid AutoGenerateColumns="True" Margin="36,80,36,0" VerticalAlignment="Top" Height="210" ItemsSource="{Binding Path=ListaMateriales}" CanUserAddRows="False" >
            
         </DataGrid>
         <Button x:Name="ButtonEditarMaterial" Content="Editar" Margin="269,387,266,35" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483"/>
         <Button x:Name="ButtonBorrarMaterial" Content="Borrar" Margin="388,387,147,35" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483"/>
         <Button x:Name="ButtonVolver" Content="Volver" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="ButtonVolver_Click"/>
+        <ComboBox ItemsSource="{Binding Path=ListaMateriales}" Margin="249,315,36,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
