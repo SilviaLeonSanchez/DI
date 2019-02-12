@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_Avituallamientos.dto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,13 @@ namespace Proyecto_Avituallamientos.interfaz
     /// </summary>
     public partial class VentanaAvituallamientos : Window
     {
-        public VentanaAvituallamientos()
+        public Carrera Carrera {get; set;}
+
+        public VentanaAvituallamientos(Carrera carrera)
         {
+            this.Carrera = carrera;
             InitializeComponent();
+            this.DataContext = this;
         }
     }
 }

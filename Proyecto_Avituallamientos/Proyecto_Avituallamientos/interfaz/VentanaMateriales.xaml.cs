@@ -41,6 +41,21 @@ namespace Proyecto_Avituallamientos.interfaz
             ventana.ShowDialog();
         }
 
+        private void ButtonBorrarMaterial_Click(object sender, RoutedEventArgs e)
+        {
+            int posicion = DataGridMateriales.SelectedIndex;
+            if (posicion != -1)
+                LogicaNegocio.GetInstance().ListaMateriales.RemoveAt(posicion);
+        }
+
+        private void ButtonEditarMaterial_Click(object sender, RoutedEventArgs e)
+        {
+            int posicion = DataGridMateriales.SelectedIndex;
+            if (posicion != -1)
+                (new VentanaNuevoMaterial((Material)DataGridMateriales.SelectedItem, DataGridMateriales.SelectedIndex)).ShowDialog();
+
+        }
+
 
     }
 }

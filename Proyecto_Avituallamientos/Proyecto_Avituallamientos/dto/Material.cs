@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Avituallamientos.dto
 {
-    public class Material
+    public class Material : ICloneable
     {
 
         private static int UltimoId;
@@ -27,6 +27,8 @@ namespace Proyecto_Avituallamientos.dto
 
         public Material()
         {
+            this.Id = UltimoId + "";
+            UltimoId++;
         }
 
         public override string ToString()
@@ -34,6 +36,11 @@ namespace Proyecto_Avituallamientos.dto
             return "Nombre: "+Nombre+"\tTipo material: "+Tipo+"\tPrecio: "+Precio;
         }
 
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
     }
 
 }

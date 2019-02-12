@@ -1,6 +1,8 @@
 ﻿using Proyecto_Avituallamientos.dto;
+using Proyecto_Avituallamientos.logica;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,20 +22,25 @@ namespace Proyecto_Avituallamientos.interfaz
     /// </summary>
     public partial class VentanaNuevoMaterial : Window
     {
-        public Material material_nuevo {get; set;}
+        private int posicion = -1;
+        public Material nuevo_material {get; set;}
+        public ObservableCollection<string> TipoMaterial {get; set; }
 
         public VentanaNuevoMaterial()
         {
             InitializeComponent();
-            this.material_nuevo = new Material();
-            this.DataContext = logica.LogicaNegocio.GetInstance();
+            this.TipoMaterial = LogicaNegocio.GetInstance().TipoMaterial;
+            this.nuevo_material = new Material();
+            this.DataContext = this;
             
         }
-        public VentanaNuevoMaterial(Material material)
+        public VentanaNuevoMaterial(Material material, int posicion)
         {
             InitializeComponent();
-            this.material_nuevo = material;
-            this.DataContext = logica.LogicaNegocio.GetInstance();
+            this.TipoMaterial = LogicaNegocio.GetInstance().TipoMaterial;
+            this.nuevo_material = (Material) material.Clone();
+            this.posicion = posicion;
+            this.DataContext = this;
         }
 
         private void ButtonVolver_Click(object sender, RoutedEventArgs e)
@@ -43,7 +50,12 @@ namespace Proyecto_Avituallamientos.interfaz
 
         private void ButtonNuevoMaterial_Click(object sender, RoutedEventArgs e)
         {
-            logica.LogicaNegocio.GetInstance().ListaMateriales.Add(material_nuevo);
+            if (posicion == -1)
+                LogicaNegocio.GetInstance().ListaMateriales.Add(nuevo_material);
+            else
+                LogicaNegocio.GetInstance().ListaMateriales[posicion] = this.nuevo_material;
+
+           this.Close();
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Avituallamientos.dto
 {
-    public class Avituallamiento
+    public class Avituallamiento : ICloneable
     {
         public string IdCarrera { get; set; }
         public string NombreCarrera { get; set; }
@@ -29,6 +29,9 @@ namespace Proyecto_Avituallamientos.dto
         }
 
 
-
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
     }
 }

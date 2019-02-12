@@ -38,6 +38,8 @@ namespace Proyecto_Avituallamientos.logica
 
             ListaMateriales.Add(new Material("Redbull",TipoMaterial[0], 2.00));
             ListaMateriales.Add(new Material("Panchitos", TipoMaterial[1], 1.50));
+
+            ListaCarreras.Add(new Carrera());
         }
 
         // METODOS 

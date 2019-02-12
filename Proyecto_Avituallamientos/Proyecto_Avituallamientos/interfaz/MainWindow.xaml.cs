@@ -33,5 +33,11 @@ namespace Proyecto_Avituallamientos.interfaz
 
         }
 
+        private void ButtonVerCarreras_Click(object sender, RoutedEventArgs e)
+        {
+            VentanaCarreras ventana = new VentanaCarreras();
+            ventana.ShowDialog();
+        }
+
     }
 }
