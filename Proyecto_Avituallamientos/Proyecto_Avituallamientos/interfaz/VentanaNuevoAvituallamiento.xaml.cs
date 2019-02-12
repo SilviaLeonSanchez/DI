@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_Avituallamientos.dto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,25 @@ namespace Proyecto_Avituallamientos.interfaz
     /// </summary>
     public partial class VentanaNuevoAvituallamiento : Window
     {
+        public Avituallamiento avituallamiento;
+        public int posicion;
+
         public VentanaNuevoAvituallamiento()
         {
             InitializeComponent();
+            this.avituallamiento = new Avituallamiento();
+            this.posicion = -1;
+            this.DataContext = this;
         }
+
+        public VentanaNuevoAvituallamiento(Avituallamiento avituallamiento, int posicion)
+        {
+            InitializeComponent();
+            this.avituallamiento = avituallamiento;
+            this.posicion = posicion;
+            this.DataContext = this;
+        }
+
+
     }
 }

@@ -31,10 +31,44 @@ namespace Proyecto_Avituallamientos.interfaz
             this.DataContext = this;
         }
 
-        private void DataGridCarreras_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ButtonAniadirCarrera_Click(object sender, RoutedEventArgs e)
         {
-            VentanaAvituallamientos ventana = new VentanaAvituallamientos();
+            VentanaNuevaCarrera ventana = new VentanaNuevaCarrera();
             ventana.ShowDialog();
+            this.DataContext = this;
+        }
+
+        private void ButtonBorrarCarrera_Click(object sender, RoutedEventArgs e)
+        {
+            int posicion_seleccionada = this.DataGridCarreras.SelectedIndex;
+            if (posicion_seleccionada != -1)
+            {
+                MessageBoxResult resultado = MessageBox.Show(this, "¿Seguro que quieres borrar la carrera seleccionada?");
+                if (resultado == MessageBoxResult.OK || resultado == MessageBoxResult.Yes)
+                {
+                    this.ListaCarreras.RemoveAt(posicion_seleccionada);
+                }
+                else
+                {
+                    MessageBox.Show(this, "No se ha borrdo ninguna carrera");
+                }
+            }
+        }
+
+        private void DataGridCarreras_DoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            VentanaNuevaCarrera ventana = new VentanaNuevaCarrera(this.ListaCarreras[this.DataGridCarreras.SelectedIndex], this.DataGridCarreras.SelectedIndex);
+            ventana.ShowDialog();
+        }
+
+        private void ButtonEditarCarrera_Click(object sender, RoutedEventArgs e)
+        {
+            int posicion_seleccionada = this.DataGridCarreras.SelectedIndex;
+            if (posicion_seleccionada != -1)
+            {
+                VentanaNuevaCarrera ventana = new VentanaNuevaCarrera(this.ListaCarreras[this.DataGridCarreras.SelectedIndex], posicion_seleccionada);
+                ventana.ShowDialog();
+            }
         }
     }
 }

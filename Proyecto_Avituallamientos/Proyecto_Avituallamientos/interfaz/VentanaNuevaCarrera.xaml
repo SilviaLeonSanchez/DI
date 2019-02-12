@@ -3,25 +3,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Nueva Carrera" Height="480" Width="640" ResizeMode="NoResize">
     <Grid RenderTransformOrigin="0.519,0.57">
-        <Grid Margin="65,31,90,88">
+        <Grid Margin="65,31,66,88">
             <Grid Height="81" VerticalAlignment="Top">
-                <Label x:Name="LabelNombreCarrera" Content="Nombre" Margin="0,36,247,0" FontSize="16" HorizontalContentAlignment="Right" HorizontalAlignment="Right" Width="222" Height="31" VerticalAlignment="Top"/>
-                <TextBox x:Name="TextBoxNombreCarrera" Margin="237,36,10,0" TextWrapping="Wrap" Text="" FontSize="16" VerticalContentAlignment="Center" Height="31" VerticalAlignment="Top"/>
-                <Label x:Name="LabelCarrera1" Content="Carrera" Margin="10,1,247,0" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Right" Height="31" VerticalAlignment="Top"/>
+                <Label x:Name="LabelNombreCarrera" Content="Nombre" Margin="0,36,369,0" FontSize="16" HorizontalContentAlignment="Right" HorizontalAlignment="Right" Width="100" Height="31" VerticalAlignment="Top"/>
+                <TextBox x:Name="TextBoxNombreCarrera" Text="{Binding Path=carrera.NombreCarrera}"  Margin="139,36,125,0" TextWrapping="Wrap" FontSize="16" VerticalContentAlignment="Center" Height="31" VerticalAlignment="Top"/>
+                <Label x:Name="LabelCarrera" Content="Carrera" Margin="10,1,10,0" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Right" Height="31" VerticalAlignment="Top" HorizontalAlignment="Center"/>
             </Grid>
-            <Grid Margin="0,96,0,0" Height="236" VerticalAlignment="Top">
-                <Label x:Name="LabelAvituallamientos" Content="Avituallamientos" Margin="10,1,247,0" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Right" Height="31" VerticalAlignment="Top"/>
-                <DataGrid Margin="50,46,10,0" VerticalAlignment="Top" Height="155">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Punto Km" HeaderStringFormat="Punto Km" Width="75"/>
-                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Persona Contacto" HeaderStringFormat="Persona Contacto" Width="120"/>
-                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Telefono Contacto" HeaderStringFormat="Telefono Contacto" Width="120"/>
-                        <DataGridComboBoxColumn ClipboardContentBinding="{x:Null}" Header="Material" HeaderStringFormat="Material" SelectedValueBinding="{x:Null}" SelectedItemBinding="{x:Null}" TextBinding="{x:Null}" Width="100"/>
-                    </DataGrid.Columns>
+            <Grid Margin="0,81,0,0" Height="251" VerticalAlignment="Top">
+                <Label x:Name="LabelAvituallamientos" Content="Avituallamientos" Margin="10,21,174,0" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Right" Height="31" VerticalAlignment="Top"/>
+                <DataGrid x:Name="DataGridAvituallamientos" ItemsSource="{Binding Path=carrera.Avituallamientos}" AutoGenerateColumns="True" CanUserAddRows="False" IsReadOnly="True" Margin="10,68,10,0" VerticalAlignment="Top" Height="173">
                 </DataGrid>
-                <Button x:Name="EditarAvituallamientos" Content="Editar" Margin="400,10,10,0" VerticalAlignment="Top"/>
+                <Button x:Name="EditarAvituallamientos" Content="Editar" Margin="400,43,10,0" VerticalAlignment="Top" Click="EditarAvituallamientos_Click"/>
+                <Button x:Name="AniadirAvituallamientos" Content="Añadir" Margin="400,18,10,0" VerticalAlignment="Top" Click="AniadirAvituallamientos_Click"/>
             </Grid>
         </Grid>
-        <Button x:Name="ButtonNuevaCarrera" Content="Nueva Carrera" Margin="227,386,227,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Height="29"/>
+        <Button x:Name="ButtonNuevaCarrera" Content="Nueva Carrera" Margin="227,386,227,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Height="29" Click="ButtonNuevaCarrera_Click"/>
     </Grid>
 </Window>

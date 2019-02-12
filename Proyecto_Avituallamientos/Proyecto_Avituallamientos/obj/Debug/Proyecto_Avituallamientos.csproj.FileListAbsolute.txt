@@ -1,7 +1,6 @@
 C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\bin\Debug\Proyecto_Avituallamientos.exe.config
 C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\bin\Debug\Proyecto_Avituallamientos.exe
 C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\bin\Debug\Proyecto_Avituallamientos.pdb
-C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\obj\Debug\Proyecto_Avituallamientos.csprojResolveAssemblyReference.cache
 C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\obj\Debug\App.g.cs
 C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\obj\Debug\Proyecto_Avituallamientos_MarkupCompile.cache
 C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\obj\Debug\Proyecto_Avituallamientos.g.resources
@@ -25,3 +24,4 @@ C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos
 C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\obj\Debug\interfaz\VentanaAniadirMaterial.g.cs
 C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\obj\Debug\interfaz\VentanaNuevoAvituallamiento.g.cs
 C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\obj\Debug\interfaz\VentanaCarreras.g.cs
+C:\Users\alumno\Documents\DI\Proyecto_Avituallamientos\Proyecto_Avituallamientos\obj\Debug\Proyecto_Avituallamientos.csprojResolveAssemblyReference.cache
