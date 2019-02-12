@@ -24,7 +24,7 @@ namespace Proyecto_Avituallamientos.interfaz
 
         public VentanaAvituallamientos(Carrera carrera)
         {
-            this.Carrera = carrera;
+            this.Carrera = carrera;gi
             InitializeComponent();
             this.DataContext = this;
         }
