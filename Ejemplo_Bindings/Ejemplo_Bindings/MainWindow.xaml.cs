@@ -39,6 +39,12 @@ namespace Ejemplo_Bindings
             PruebaGrid ventana = new PruebaGrid();
             ventana.ShowDialog();
         }
+        
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            Window1 ventana = new Window1();
+            ventana.ShowDialog();
+        }
     }
 
     public class Persona

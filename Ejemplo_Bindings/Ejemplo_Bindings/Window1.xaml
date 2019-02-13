@@ -1,0 +1,11 @@
+﻿<Window x:Class="Ejemplo_Bindings.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Window1" Height="300" Width="300">
+    <Grid>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="146,52,0,0" TextWrapping="Wrap" Validation.Error="Validation_Error"  Text="{Binding Path=persona.Nombre, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="30,49,0,0" VerticalAlignment="Top" Width="85"/>
+        <Button Content="Aceptar" x:Name="BotonAceptar" HorizontalAlignment="Left" Margin="104,177,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ejemplo_Bindings
 {
-    public class PersonaActualizable : INotifyPropertyChanged
+    public class PersonaActualizable : INotifyPropertyChanged, IDataErrorInfo
     {
         private string nombre;
         private string apellido;
@@ -27,8 +27,38 @@ namespace Ejemplo_Bindings
                 return Nombre + " " + Apellido;
             }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        
+
+
+        public string Error
+        {
+            get { return ""; }
+        }
+
+        public string this[string columnName]
+        {
+            // Llama al metodo para cada campo
+            // Si devuelves un string vacio entiende que no hay ningun error
+            get 
+            {
+                string resultado = "";
+                if (string.IsNullOrEmpty(columnName))
+                    resultado = "Error: El campo "+ columnName +" no puede estar vacío";
+                
+                switch (columnName) 
+                {
+                    case "Nombre":
+                        
+                        break;
+                    case "Apellido":
+
+                        break;
+                }
+
+                return resultado;
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

@@ -1,9 +1,12 @@
 C:\Users\alumno\Documents\DI\Ejemplo_Bindings\Ejemplo_Bindings\bin\Debug\Ejemplo_Bindings.exe.config
 C:\Users\alumno\Documents\DI\Ejemplo_Bindings\Ejemplo_Bindings\bin\Debug\Ejemplo_Bindings.exe
 C:\Users\alumno\Documents\DI\Ejemplo_Bindings\Ejemplo_Bindings\bin\Debug\Ejemplo_Bindings.pdb
-C:\Users\alumno\Documents\DI\Ejemplo_Bindings\Ejemplo_Bindings\obj\Debug\Ejemplo_Bindings.csprojResolveAssemblyReference.cache
 C:\Users\alumno\Documents\DI\Ejemplo_Bindings\Ejemplo_Bindings\obj\Debug\MainWindow.baml
+C:\Users\alumno\Documents\DI\Ejemplo_Bindings\Ejemplo_Bindings\obj\Debug\PruebaGrid.baml
+C:\Users\alumno\Documents\DI\Ejemplo_Bindings\Ejemplo_Bindings\obj\Debug\Window1.baml
 C:\Users\alumno\Documents\DI\Ejemplo_Bindings\Ejemplo_Bindings\obj\Debug\MainWindow.g.cs
+C:\Users\alumno\Documents\DI\Ejemplo_Bindings\Ejemplo_Bindings\obj\Debug\PruebaGrid.g.cs
+C:\Users\alumno\Documents\DI\Ejemplo_Bindings\Ejemplo_Bindings\obj\Debug\Window1.g.cs
 C:\Users\alumno\Documents\DI\Ejemplo_Bindings\Ejemplo_Bindings\obj\Debug\App.g.cs
 C:\Users\alumno\Documents\DI\Ejemplo_Bindings\Ejemplo_Bindings\obj\Debug\Ejemplo_Bindings_MarkupCompile.cache
 C:\Users\alumno\Documents\DI\Ejemplo_Bindings\Ejemplo_Bindings\obj\Debug\Ejemplo_Bindings.g.resources
@@ -11,5 +14,3 @@ C:\Users\alumno\Documents\DI\Ejemplo_Bindings\Ejemplo_Bindings\obj\Debug\Ejemplo
 C:\Users\alumno\Documents\DI\Ejemplo_Bindings\Ejemplo_Bindings\obj\Debug\Ejemplo_Bindings.csproj.GenerateResource.Cache
 C:\Users\alumno\Documents\DI\Ejemplo_Bindings\Ejemplo_Bindings\obj\Debug\Ejemplo_Bindings.exe
 C:\Users\alumno\Documents\DI\Ejemplo_Bindings\Ejemplo_Bindings\obj\Debug\Ejemplo_Bindings.pdb
-C:\Users\alumno\Documents\DI\Ejemplo_Bindings\Ejemplo_Bindings\obj\Debug\PruebaGrid.baml
-C:\Users\alumno\Documents\DI\Ejemplo_Bindings\Ejemplo_Bindings\obj\Debug\PruebaGrid.g.cs

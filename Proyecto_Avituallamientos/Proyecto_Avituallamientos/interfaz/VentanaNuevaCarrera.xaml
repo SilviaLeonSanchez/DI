@@ -10,13 +10,14 @@
                 <Label x:Name="LabelCarrera" Content="Carrera" Margin="10,1,10,0" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Right" Height="31" VerticalAlignment="Top" HorizontalAlignment="Center"/>
             </Grid>
             <Grid Margin="0,81,0,0" Height="251" VerticalAlignment="Top">
-                <Label x:Name="LabelAvituallamientos" Content="Avituallamientos" Margin="10,21,174,0" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Right" Height="31" VerticalAlignment="Top"/>
-                <DataGrid x:Name="DataGridAvituallamientos" ItemsSource="{Binding Path=carrera.Avituallamientos}" AutoGenerateColumns="True" CanUserAddRows="False" IsReadOnly="True" Margin="10,68,10,0" VerticalAlignment="Top" Height="173">
+                <Label x:Name="LabelAvituallamientos" Content="Avituallamientos" Margin="10,21,10,0" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" Height="31" VerticalAlignment="Top"/>
+                <DataGrid x:Name="DataGridAvituallamientos" ItemsSource="{Binding Path=carrera.Avituallamientos}" AutoGenerateColumns="True" CanUserAddRows="False" IsReadOnly="True" Margin="88,68,89,0" VerticalAlignment="Top" Height="173">
                 </DataGrid>
-                <Button x:Name="EditarAvituallamientos" Content="Editar" Margin="400,43,10,0" VerticalAlignment="Top" Click="EditarAvituallamientos_Click"/>
-                <Button x:Name="AniadirAvituallamientos" Content="Añadir" Margin="400,18,10,0" VerticalAlignment="Top" Click="AniadirAvituallamientos_Click"/>
+                <Button x:Name="ButtonEditarAvituallamientos" Content="Editar" Margin="430,174,10,0" VerticalAlignment="Top" Click="EditarAvituallamientos_Click"/>
+                <Button x:Name="ButtonAniadirAvituallamientos" Content="Añadir" Margin="430,139,10,0" VerticalAlignment="Top" Click="AniadirAvituallamientos_Click"/>
+                <Button x:Name="ButtonBorrarAvituallamiento" Content="Borrar" HorizontalAlignment="Left" Margin="430,208,0,0" VerticalAlignment="Top" Width="63" Click="ButtonBorrarAvituallamiento_Click"/>
             </Grid>
         </Grid>
-        <Button x:Name="ButtonNuevaCarrera" Content="Nueva Carrera" Margin="227,386,227,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Height="29" Click="ButtonNuevaCarrera_Click"/>
+        <Button x:Name="ButtonGuardar" Content="Guardar" Margin="227,386,227,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Height="29" Click="ButtonGuardar_Click"/>
     </Grid>
 </Window>

@@ -3,13 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
          Title="Materiales" Height="480" Width="640" ResizeMode="NoResize">
     <Grid Height="451" VerticalAlignment="Top">
-        <Button x:Name="ButtonAniadirMaterial" Content="Añadir" Margin="150,387,385,35" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonAniadirMaterial_Click"/>
+        <Button x:Name="ButtonAniadirMaterial" Content="Añadir" Margin="150,363,385,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonAniadirMaterial_Click"/>
         <Label x:Name="LabelTituloMaterial" Content="Materiales" Margin="10,29,10,0" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" Height="31" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
-        <DataGrid x:Name="DataGridMateriales" AutoGenerateColumns="True" Margin="36,65,36,0" VerticalAlignment="Top" Height="210" ItemsSource="{Binding Path=ListaMateriales}" CanUserAddRows="False" IsReadOnly="True" >
-           
-        </DataGrid>
-        <Button x:Name="ButtonEditarMaterial" Content="Editar" Margin="269,387,266,35" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonEditarMaterial_Click"/>
-        <Button x:Name="ButtonBorrarMaterial" Content="Borrar" Margin="388,387,147,35" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonBorrarMaterial_Click"/>
-        <Button x:Name="ButtonVolver" Content="Volver" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="ButtonVolver_Click"/>
-        </Grid>
+        <DataGrid x:Name="DataGridMateriales" AutoGenerateColumns="True" Margin="36,75,36,135" ItemsSource="{Binding Path=ListaMateriales}" CanUserAddRows="False" IsReadOnly="True" />
+        <Button x:Name="ButtonEditarMaterial" Content="Editar" Margin="269,363,266,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonEditarMaterial_Click"/>
+        <Button x:Name="ButtonBorrarMaterial" Content="Borrar" Margin="388,363,147,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonBorrarMaterial_Click"/>
+    </Grid>
 </Window>

@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Proyecto_Avituallamientos.dto
 {
-    public class Avituallamiento : ICloneable
+    public class Avituallamiento : ICloneable, INotifyPropertyChanged
     {
         public string IdCarrera { get; set; }
         public string NombreCarrera { get; set; }
@@ -33,5 +34,7 @@ namespace Proyecto_Avituallamientos.dto
         {
             return this.MemberwiseClone();
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

@@ -28,29 +28,29 @@ namespace Proyecto_Avituallamientos.interfaz
         public VentanaNuevaCarrera()
         {
             InitializeComponent();
-            this.DataContext = this;
             this.carrera = new Carrera();
             this.posicion = -1;
+            this.DataContext = this;
             
         }
 
         public VentanaNuevaCarrera(Carrera carrera, int posicion)
         {
             InitializeComponent();
-            this.DataContext = this;
             this.carrera = (Carrera) carrera.Clone();
             this.posicion = posicion;
+            this.DataContext = this;
         }
 
-        private void ButtonNuevaCarrera_Click(object sender, RoutedEventArgs e)
+        private void ButtonGuardar_Click(object sender, RoutedEventArgs e)
         {
             if (posicion == -1)
             {
-                LogicaNegocio.GetInstance().ListaCarreras.Add(this.carrera);
+                LogicaNegocio.ListaCarreras.Add(this.carrera);
             }
             else 
             {
-                LogicaNegocio.GetInstance().ListaCarreras[this.posicion] = this.carrera;
+                LogicaNegocio.ListaCarreras[this.posicion] = this.carrera;
             }
             this.Close();
         }
@@ -69,6 +69,15 @@ namespace Proyecto_Avituallamientos.interfaz
         {
             VentanaNuevoAvituallamiento ventana = new VentanaNuevoAvituallamiento();
             ventana.ShowDialog();
+        }
+
+        private void ButtonBorrarAvituallamiento_Click(object sender, RoutedEventArgs e)
+        {
+            int posicion_seleccionada = this.DataGridAvituallamientos.SelectedIndex;
+            if (posicion_seleccionada != -1)
+            {
+                this.carrera.Avituallamientos.RemoveAt(posicion_seleccionada);
+            }
         }
 
 

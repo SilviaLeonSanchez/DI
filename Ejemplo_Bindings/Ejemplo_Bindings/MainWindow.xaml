@@ -15,5 +15,6 @@
                 <DataGridTextColumn Header="APELLIDO" Binding="{Binding Path=Apellido}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Content="Nueva Persona" HorizontalAlignment="Left" Margin="212,283,0,0" VerticalAlignment="Top" Width="112" Height="26" Click="Button_Click_3"/>
     </Grid>
 </Window>

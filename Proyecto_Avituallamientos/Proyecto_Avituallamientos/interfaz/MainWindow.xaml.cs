@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_Avituallamientos.logica;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace Proyecto_Avituallamientos.interfaz
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static LogicaNegocio Logica { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
+            Logica = new LogicaNegocio();
         }
 
         private void ButtonVerMaterial_Click(object sender, RoutedEventArgs e)
@@ -38,6 +42,7 @@ namespace Proyecto_Avituallamientos.interfaz
             VentanaCarreras ventana = new VentanaCarreras();
             ventana.ShowDialog();
         }
+
 
     }
 }

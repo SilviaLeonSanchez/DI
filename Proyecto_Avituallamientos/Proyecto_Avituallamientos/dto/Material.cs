@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Proyecto_Avituallamientos.dto
 {
-    public class Material : ICloneable
+    public class Material : ICloneable, INotifyPropertyChanged
     {
 
         private static int UltimoId;
@@ -41,6 +42,8 @@ namespace Proyecto_Avituallamientos.dto
         {
             return this.MemberwiseClone();
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 
 }

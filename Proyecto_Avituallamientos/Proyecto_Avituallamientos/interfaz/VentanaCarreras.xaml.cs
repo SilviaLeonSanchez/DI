@@ -22,20 +22,17 @@ namespace Proyecto_Avituallamientos.interfaz
     /// </summary>
     public partial class VentanaCarreras : Window
     {
-        public ObservableCollection<Carrera> ListaCarreras { get; set; }
 
         public VentanaCarreras()
         {
             InitializeComponent();
-            this.ListaCarreras = LogicaNegocio.GetInstance().ListaCarreras;
-            this.DataContext = this;
+            this.DataContext = LogicaNegocio.ListaCarreras;
         }
 
         private void ButtonAniadirCarrera_Click(object sender, RoutedEventArgs e)
         {
             VentanaNuevaCarrera ventana = new VentanaNuevaCarrera();
             ventana.ShowDialog();
-            this.DataContext = this;
         }
 
         private void ButtonBorrarCarrera_Click(object sender, RoutedEventArgs e)
@@ -46,7 +43,7 @@ namespace Proyecto_Avituallamientos.interfaz
                 MessageBoxResult resultado = MessageBox.Show(this, "¿Seguro que quieres borrar la carrera seleccionada?");
                 if (resultado == MessageBoxResult.OK || resultado == MessageBoxResult.Yes)
                 {
-                    this.ListaCarreras.RemoveAt(posicion_seleccionada);
+                    LogicaNegocio.ListaCarreras.RemoveAt(posicion_seleccionada);
                 }
                 else
                 {
@@ -57,7 +54,7 @@ namespace Proyecto_Avituallamientos.interfaz
 
         private void DataGridCarreras_DoubleClick(object sender, MouseButtonEventArgs e)
         {
-            VentanaNuevaCarrera ventana = new VentanaNuevaCarrera(this.ListaCarreras[this.DataGridCarreras.SelectedIndex], this.DataGridCarreras.SelectedIndex);
+            VentanaNuevaCarrera ventana = new VentanaNuevaCarrera(LogicaNegocio.ListaCarreras[this.DataGridCarreras.SelectedIndex], this.DataGridCarreras.SelectedIndex);
             ventana.ShowDialog();
         }
 
@@ -66,7 +63,7 @@ namespace Proyecto_Avituallamientos.interfaz
             int posicion_seleccionada = this.DataGridCarreras.SelectedIndex;
             if (posicion_seleccionada != -1)
             {
-                VentanaNuevaCarrera ventana = new VentanaNuevaCarrera(this.ListaCarreras[this.DataGridCarreras.SelectedIndex], posicion_seleccionada);
+                VentanaNuevaCarrera ventana = new VentanaNuevaCarrera(LogicaNegocio.ListaCarreras[this.DataGridCarreras.SelectedIndex], posicion_seleccionada);
                 ventana.ShowDialog();
             }
         }

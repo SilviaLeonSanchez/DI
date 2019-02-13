@@ -8,26 +8,15 @@ using Proyecto_Avituallamientos.dto;
 
 namespace Proyecto_Avituallamientos.logica
 {
-    class LogicaNegocio
+    public class LogicaNegocio
     {
         // ATRIBUTOS
-        public ObservableCollection<Carrera> ListaCarreras { get; set; }
-        public ObservableCollection<Material> ListaMateriales {get; set;}
-        public ObservableCollection<String> TipoMaterial { get; set; }
+        public static ObservableCollection<Carrera> ListaCarreras { get; set; }
+        public static ObservableCollection<Material> ListaMateriales {get; set;}
+        public static ObservableCollection<String> TipoMaterial { get; set; }
 
-        
-
-        // SINGLETON
-        private static LogicaNegocio INSTANCE;
-        public static LogicaNegocio GetInstance()
-        {
-            if (INSTANCE == null)
-            {
-                INSTANCE = new LogicaNegocio();
-            }
-            return INSTANCE;
-        }
-        private LogicaNegocio()
+        // METODOS 
+        public LogicaNegocio()
         {
             ListaMateriales = new ObservableCollection<Material>();
             ListaCarreras = new ObservableCollection<Carrera>();
@@ -39,10 +28,9 @@ namespace Proyecto_Avituallamientos.logica
             ListaMateriales.Add(new Material("Redbull",TipoMaterial[0], 2.00));
             ListaMateriales.Add(new Material("Panchitos", TipoMaterial[1], 1.50));
 
-            ListaCarreras.Add(new Carrera());
+            ListaCarreras.Add(new Carrera("Carrera de prueba"));
         }
 
-        // METODOS 
         public void AddMaterial(Material material)
         {
             ListaMateriales.Add(material);
@@ -50,6 +38,7 @@ namespace Proyecto_Avituallamientos.logica
 
         public void AddCarrera(Carrera carrera)
         {
+            ListaCarreras.Add(carrera);
         }
 
         public Carrera buscarCarrera(string nombre)
