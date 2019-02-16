@@ -6,7 +6,7 @@
     <Grid>
         <DataGrid Margin="50,82,50,0" VerticalAlignment="Top" Height="262">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path=Carrera.NombreCarrera}" ClipboardContentBinding="{x:Null}" Header="Carrera" HeaderStringFormat="Carrera" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Path=NombreCarrera}" ClipboardContentBinding="{x:Null}" Header="Carrera" HeaderStringFormat="Carrera" Width="120"/>
                 <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Punto Km" HeaderStringFormat="Punto Km" Width="75"/>
                 <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Persona Contacto" HeaderStringFormat="Persona Contacto" Width="120"/>
                 <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Telefono Contacto" HeaderStringFormat="Telefono Contacto" Width="120"/>

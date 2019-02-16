@@ -20,23 +20,58 @@ namespace Proyecto_Avituallamientos.interfaz
     /// </summary>
     public partial class VentanaNuevoAvituallamiento : Window
     {
+        public Carrera carrera;
         public Avituallamiento avituallamiento;
         public int posicion;
 
-        public VentanaNuevoAvituallamiento()
+        public VentanaNuevoAvituallamiento(Carrera carrera)
         {
             InitializeComponent();
+            this.carrera = carrera;
+            this.TextBoxNombreCarrera.Text = carrera.NombreCarrera;
             this.avituallamiento = new Avituallamiento();
             this.posicion = -1;
-            this.DataContext = this;
+            this.DataContext = this.avituallamiento;
         }
 
-        public VentanaNuevoAvituallamiento(Avituallamiento avituallamiento, int posicion)
+        public VentanaNuevoAvituallamiento(Carrera carrera, Avituallamiento avituallamiento, int posicion)
         {
             InitializeComponent();
             this.avituallamiento = avituallamiento;
+            this.DataContext = this.avituallamiento;
             this.posicion = posicion;
-            this.DataContext = this;
+            this.carrera = carrera;
+            this.TextBoxNombreCarrera.Text = carrera.NombreCarrera;
+        }
+
+        private void ButtonGuardarAvituallamiento_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.posicion != -1)
+            {
+                this.carrera.Avituallamientos[posicion] = this.avituallamiento;
+            }
+            else
+            {
+                this.carrera.Avituallamientos.Add(this.avituallamiento);
+            }
+            this.Close();
+        }
+
+        private void EditarMaterial_Click(object sender, RoutedEventArgs e)
+        {
+            VentanaMateriales ventana = new VentanaMateriales();
+            ventana.ShowDialog();
+        }
+
+        private void ButtonAñadirMaterial_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonBorrarMaterial_Click(object sender, RoutedEventArgs e)
+        {
+          // int posicion = this.DataGridMaterial.
+           
         }
 
 

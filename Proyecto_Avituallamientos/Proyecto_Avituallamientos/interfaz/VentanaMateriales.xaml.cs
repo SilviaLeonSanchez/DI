@@ -23,16 +23,19 @@ namespace Proyecto_Avituallamientos.interfaz
     public partial class VentanaMateriales : Window
     {
 
+        public Avituallamiento avituallamiento;
 
         public VentanaMateriales()
         {
             InitializeComponent();
-            this.DataContext = LogicaNegocio.GetInstance();
+            this.DataContext = MainWindow.Logica.ListaMateriales;
         }
 
-        private void ButtonVolver_Click(object sender, RoutedEventArgs e)
+        public VentanaMateriales(Avituallamiento avituallamiento)
         {
-            this.Close();
+            InitializeComponent();
+            this.avituallamiento = avituallamiento;
+            this.DataContext = avituallamiento;
         }
 
         private void ButtonAniadirMaterial_Click(object sender, RoutedEventArgs e)
@@ -45,7 +48,7 @@ namespace Proyecto_Avituallamientos.interfaz
         {
             int posicion = DataGridMateriales.SelectedIndex;
             if (posicion != -1)
-                LogicaNegocio.GetInstance().ListaMateriales.RemoveAt(posicion);
+                MainWindow.Logica.ListaMateriales.RemoveAt(posicion);
         }
 
         private void ButtonEditarMaterial_Click(object sender, RoutedEventArgs e)

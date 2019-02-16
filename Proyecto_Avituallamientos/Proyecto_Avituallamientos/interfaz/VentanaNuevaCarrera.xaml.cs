@@ -30,7 +30,7 @@ namespace Proyecto_Avituallamientos.interfaz
             InitializeComponent();
             this.carrera = new Carrera();
             this.posicion = -1;
-            this.DataContext = this;
+            this.DataContext = this.carrera;
             
         }
 
@@ -39,18 +39,18 @@ namespace Proyecto_Avituallamientos.interfaz
             InitializeComponent();
             this.carrera = (Carrera) carrera.Clone();
             this.posicion = posicion;
-            this.DataContext = this;
+            this.DataContext = this.carrera;
         }
 
         private void ButtonGuardar_Click(object sender, RoutedEventArgs e)
         {
             if (posicion == -1)
             {
-                LogicaNegocio.ListaCarreras.Add(this.carrera);
+                MainWindow.Logica.ListaCarreras.Add(this.carrera);
             }
             else 
             {
-                LogicaNegocio.ListaCarreras[this.posicion] = this.carrera;
+                MainWindow.Logica.ListaCarreras[this.posicion] = this.carrera;
             }
             this.Close();
         }
@@ -60,14 +60,14 @@ namespace Proyecto_Avituallamientos.interfaz
             int posicion_seleccionada = this.DataGridAvituallamientos.SelectedIndex;
             if (posicion_seleccionada != -1)
             {
-                VentanaNuevoAvituallamiento ventana = new VentanaNuevoAvituallamiento(carrera.Avituallamientos[posicion_seleccionada], posicion_seleccionada);
+                VentanaNuevoAvituallamiento ventana = new VentanaNuevoAvituallamiento(this.carrera, this.carrera.Avituallamientos[posicion_seleccionada], posicion_seleccionada);
                 ventana.ShowDialog();
             }
         }
 
         private void AniadirAvituallamientos_Click(object sender, RoutedEventArgs e)
         {
-            VentanaNuevoAvituallamiento ventana = new VentanaNuevoAvituallamiento();
+            VentanaNuevoAvituallamiento ventana = new VentanaNuevoAvituallamiento(this.carrera);
             ventana.ShowDialog();
         }
 

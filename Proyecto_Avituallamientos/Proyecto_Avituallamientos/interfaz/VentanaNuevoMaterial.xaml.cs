@@ -24,23 +24,20 @@ namespace Proyecto_Avituallamientos.interfaz
     {
         private int posicion = -1;
         public Material nuevo_material {get; set;}
-        public ObservableCollection<string> TipoMaterial {get; set; }
 
         public VentanaNuevoMaterial()
         {
             InitializeComponent();
-            this.TipoMaterial = LogicaNegocio.GetInstance().TipoMaterial;
             this.nuevo_material = new Material();
-            this.DataContext = this;
+            this.DataContext = this.nuevo_material;
             
         }
         public VentanaNuevoMaterial(Material material, int posicion)
         {
             InitializeComponent();
-            this.TipoMaterial = LogicaNegocio.GetInstance().TipoMaterial;
             this.nuevo_material = (Material) material.Clone();
             this.posicion = posicion;
-            this.DataContext = this;
+            this.DataContext = this.nuevo_material;
         }
 
         private void ButtonVolver_Click(object sender, RoutedEventArgs e)
@@ -51,9 +48,9 @@ namespace Proyecto_Avituallamientos.interfaz
         private void ButtonNuevoMaterial_Click(object sender, RoutedEventArgs e)
         {
             if (posicion == -1)
-                LogicaNegocio.GetInstance().ListaMateriales.Add(nuevo_material);
+                MainWindow.Logica.ListaMateriales.Add(nuevo_material);
             else
-                LogicaNegocio.GetInstance().ListaMateriales[posicion] = this.nuevo_material;
+                MainWindow.Logica.ListaMateriales[posicion] = this.nuevo_material;
 
            this.Close();
         }

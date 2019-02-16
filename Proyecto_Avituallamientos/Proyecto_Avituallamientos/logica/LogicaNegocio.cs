@@ -11,9 +11,9 @@ namespace Proyecto_Avituallamientos.logica
     public class LogicaNegocio
     {
         // ATRIBUTOS
-        public static ObservableCollection<Carrera> ListaCarreras { get; set; }
-        public static ObservableCollection<Material> ListaMateriales {get; set;}
-        public static ObservableCollection<String> TipoMaterial { get; set; }
+        public ObservableCollection<Carrera> ListaCarreras { get; set; }
+        public ObservableCollection<Material> ListaMateriales {get; set;}
+        public ObservableCollection<String> TipoMaterial { get; set; }
 
         // METODOS 
         public LogicaNegocio()

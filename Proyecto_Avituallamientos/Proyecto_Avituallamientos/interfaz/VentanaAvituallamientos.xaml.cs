@@ -27,7 +27,7 @@ namespace Proyecto_Avituallamientos.interfaz
             this.Carrera = carrera;
             
             InitializeComponent();
-            this.DataContext = this;
+            this.DataContext = this.Carrera;
         }
     }
 }

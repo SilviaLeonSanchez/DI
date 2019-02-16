@@ -3,10 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
          Title="Materiales" Height="480" Width="640" ResizeMode="NoResize">
     <Grid Height="451" VerticalAlignment="Top">
-        <Button x:Name="ButtonAniadirMaterial" Content="Añadir" Margin="150,363,385,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonAniadirMaterial_Click"/>
+        <Button x:Name="ButtonAniadirMaterial" Content="Añadir" Margin="499,363,36,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonAniadirMaterial_Click"/>
         <Label x:Name="LabelTituloMaterial" Content="Materiales" Margin="10,29,10,0" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" Height="31" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
         <DataGrid x:Name="DataGridMateriales" AutoGenerateColumns="True" Margin="36,75,36,135" ItemsSource="{Binding Path=ListaMateriales}" CanUserAddRows="False" IsReadOnly="True" />
-        <Button x:Name="ButtonEditarMaterial" Content="Editar" Margin="269,363,266,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonEditarMaterial_Click"/>
-        <Button x:Name="ButtonBorrarMaterial" Content="Borrar" Margin="388,363,147,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonBorrarMaterial_Click"/>
+        <Button x:Name="ButtonEditarMaterial" Content="Editar" Margin="190,363,345,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonEditarMaterial_Click"/>
+        <Button x:Name="ButtonBorrarMaterial" Content="Borrar" Margin="309,363,226,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonBorrarMaterial_Click"/>
+        <Button x:Name="ButtonNuevoMaterial" Content="Nuevo" Margin="70,363,465,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="-2.96,0.536" />
     </Grid>
 </Window>

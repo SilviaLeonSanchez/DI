@@ -26,7 +26,7 @@ namespace Proyecto_Avituallamientos.interfaz
         public VentanaCarreras()
         {
             InitializeComponent();
-            this.DataContext = LogicaNegocio.ListaCarreras;
+            this.DataContext = MainWindow.Logica;
         }
 
         private void ButtonAniadirCarrera_Click(object sender, RoutedEventArgs e)
@@ -43,7 +43,7 @@ namespace Proyecto_Avituallamientos.interfaz
                 MessageBoxResult resultado = MessageBox.Show(this, "¿Seguro que quieres borrar la carrera seleccionada?");
                 if (resultado == MessageBoxResult.OK || resultado == MessageBoxResult.Yes)
                 {
-                    LogicaNegocio.ListaCarreras.RemoveAt(posicion_seleccionada);
+                    MainWindow.Logica.ListaCarreras.RemoveAt(posicion_seleccionada);
                 }
                 else
                 {
@@ -54,7 +54,7 @@ namespace Proyecto_Avituallamientos.interfaz
 
         private void DataGridCarreras_DoubleClick(object sender, MouseButtonEventArgs e)
         {
-            VentanaNuevaCarrera ventana = new VentanaNuevaCarrera(LogicaNegocio.ListaCarreras[this.DataGridCarreras.SelectedIndex], this.DataGridCarreras.SelectedIndex);
+            VentanaNuevaCarrera ventana = new VentanaNuevaCarrera(MainWindow.Logica.ListaCarreras[this.DataGridCarreras.SelectedIndex], this.DataGridCarreras.SelectedIndex);
             ventana.ShowDialog();
         }
 
@@ -63,7 +63,7 @@ namespace Proyecto_Avituallamientos.interfaz
             int posicion_seleccionada = this.DataGridCarreras.SelectedIndex;
             if (posicion_seleccionada != -1)
             {
-                VentanaNuevaCarrera ventana = new VentanaNuevaCarrera(LogicaNegocio.ListaCarreras[this.DataGridCarreras.SelectedIndex], posicion_seleccionada);
+                VentanaNuevaCarrera ventana = new VentanaNuevaCarrera(MainWindow.Logica.ListaCarreras[this.DataGridCarreras.SelectedIndex], posicion_seleccionada);
                 ventana.ShowDialog();
             }
         }
