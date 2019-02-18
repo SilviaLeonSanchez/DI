@@ -30,6 +30,7 @@ namespace Proyecto_Avituallamientos.interfaz
             InitializeComponent();
             this.nuevo_material = new Material();
             this.DataContext = this.nuevo_material;
+            this.ComboBoxTipoMaterial.DataContext = MainWindow.Logica;
             
         }
         public VentanaNuevoMaterial(Material material, int posicion)
@@ -38,6 +39,7 @@ namespace Proyecto_Avituallamientos.interfaz
             this.nuevo_material = (Material) material.Clone();
             this.posicion = posicion;
             this.DataContext = this.nuevo_material;
+            this.ComboBoxTipoMaterial.DataContext = MainWindow.Logica;
         }
 
         private void ButtonVolver_Click(object sender, RoutedEventArgs e)

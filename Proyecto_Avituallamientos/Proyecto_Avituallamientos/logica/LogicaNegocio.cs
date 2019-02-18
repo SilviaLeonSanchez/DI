@@ -31,16 +31,6 @@ namespace Proyecto_Avituallamientos.logica
             ListaCarreras.Add(new Carrera("Carrera de prueba"));
         }
 
-        public void AddMaterial(Material material)
-        {
-            ListaMateriales.Add(material);
-        }
-
-        public void AddCarrera(Carrera carrera)
-        {
-            ListaCarreras.Add(carrera);
-        }
-
         public Carrera buscarCarrera(string nombre)
         {
             foreach (Carrera c in ListaCarreras)

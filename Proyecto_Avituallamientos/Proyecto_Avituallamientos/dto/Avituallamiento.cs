@@ -9,6 +9,8 @@ namespace Proyecto_Avituallamientos.dto
 {
     public class Avituallamiento : ICloneable, INotifyPropertyChanged
     {
+        private static int totalAvituallamientos = 0;
+
         public string IdCarrera { get; set; }
         public string NombreCarrera { get; set; }
 
@@ -17,6 +19,14 @@ namespace Proyecto_Avituallamientos.dto
         public string PersonaContacto { get; set; }
         public string TelefonoContacto { get; set; }
         public Dictionary<string,int> Materiales { get; set; }
+
+        public Avituallamiento(Carrera carrera)
+        {
+            totalAvituallamientos += 1;
+            this.IdAvituallamiento = Convert.ToString(totalAvituallamientos);
+            this.IdCarrera = carrera.IdCarrera;
+            this.NombreCarrera = carrera.NombreCarrera;
+        }
 
         public override string ToString()
         {

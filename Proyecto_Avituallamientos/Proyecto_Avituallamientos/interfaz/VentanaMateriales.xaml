@@ -3,11 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
          Title="Materiales" Height="480" Width="640" ResizeMode="NoResize">
     <Grid Height="451" VerticalAlignment="Top">
-        <Button x:Name="ButtonAniadirMaterial" Content="Añadir" Margin="499,363,36,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonAniadirMaterial_Click"/>
+        <Button x:Name="ButtonAniadirMaterial" Content="Añadir" Margin="499,387,36,36" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonAniadirMaterial_Click"/>
         <Label x:Name="LabelTituloMaterial" Content="Materiales" Margin="10,29,10,0" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" Height="31" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
         <DataGrid x:Name="DataGridMateriales" AutoGenerateColumns="True" Margin="36,75,36,135" ItemsSource="{Binding Path=ListaMateriales}" CanUserAddRows="False" IsReadOnly="True" />
-        <Button x:Name="ButtonEditarMaterial" Content="Editar" Margin="190,363,345,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonEditarMaterial_Click"/>
-        <Button x:Name="ButtonBorrarMaterial" Content="Borrar" Margin="309,363,226,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonBorrarMaterial_Click"/>
-        <Button x:Name="ButtonNuevoMaterial" Content="Nuevo" Margin="70,363,465,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="-2.96,0.536" />
+        <Button x:Name="ButtonEditarMaterial" Content="Editar" Margin="157,363,378,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonEditarMaterial_Click"/>
+        <Button x:Name="ButtonBorrarMaterial" Content="Borrar" Margin="279,363,256,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonBorrarMaterial_Click"/>
+        <Button x:Name="ButtonNuevoMaterial" Content="Nuevo" Margin="36,363,499,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="-2.96,0.536" Click="ButtonNuevoMaterial_Click" />
+        <TextBox x:Name="TextBoxCantidad" HorizontalAlignment="Left" Height="28" Margin="499,341,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="99" RenderTransformOrigin="0.235,0.393"/>
+        <Label x:Name="LabelCantidad" Content="Cantidad" HorizontalAlignment="Left" Margin="402,341,0,0" VerticalAlignment="Top" Height="28" Width="92" FontSize="14" FontWeight="Bold"/>
     </Grid>
 </Window>

@@ -3,7 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Carreras" Height="480" Width="640">
     <Grid>
-        <DataGrid x:Name="DataGridCarreras" ItemsSource="{Binding Path=ListaCarreras}" AutoGenerateColumns="True" CanUserAddRows="False" IsReadOnly="True" Margin="78,75,78,0" VerticalAlignment="Top" Height="262" MouseDoubleClick="DataGridCarreras_DoubleClick"/>
+        <DataGrid x:Name="DataGridCarreras" ItemsSource="{Binding Path=ListaCarreras}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Margin="78,75,78,0" VerticalAlignment="Top" Height="262" MouseDoubleClick="DataGridCarreras_DoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Path=IdCarrera}" CanUserResize="False" Width="80"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Path=NombreCarrera}" CanUserResize="False" Width="280"/>
+                <DataGridTextColumn Header="Avituallamientos" Binding="{Binding Path=Avituallamientos.Count}" CanUserResize="False" Width="120"/>
+            </DataGrid.Columns>
+        </DataGrid>
         <Button x:Name="ButtonAniadirCarrera" Content="Añadir" Margin="147,360,386,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Height="29" Click="ButtonAniadirCarrera_Click"/>
         <Button x:Name="ButtonEditarCarrera" Content="Editar" Margin="266,360,267,0" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonEditarCarrera_Click" Height="29" VerticalAlignment="Top"/>
         <Button x:Name="ButtonBorrarCarrera" Content="Borrar" Margin="385,360,148,0" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonBorrarCarrera_Click" Height="29" VerticalAlignment="Top"/>

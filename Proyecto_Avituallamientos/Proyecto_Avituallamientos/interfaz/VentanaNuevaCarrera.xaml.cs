@@ -62,6 +62,7 @@ namespace Proyecto_Avituallamientos.interfaz
             {
                 VentanaNuevoAvituallamiento ventana = new VentanaNuevoAvituallamiento(this.carrera, this.carrera.Avituallamientos[posicion_seleccionada], posicion_seleccionada);
                 ventana.ShowDialog();
+                this.DataContext = this.carrera;
             }
         }
 

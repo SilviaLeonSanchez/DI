@@ -56,6 +56,7 @@ namespace Proyecto_Avituallamientos.interfaz
         {
             VentanaNuevaCarrera ventana = new VentanaNuevaCarrera(MainWindow.Logica.ListaCarreras[this.DataGridCarreras.SelectedIndex], this.DataGridCarreras.SelectedIndex);
             ventana.ShowDialog();
+            this.DataContext = MainWindow.Logica;
         }
 
         private void ButtonEditarCarrera_Click(object sender, RoutedEventArgs e)
@@ -65,6 +66,7 @@ namespace Proyecto_Avituallamientos.interfaz
             {
                 VentanaNuevaCarrera ventana = new VentanaNuevaCarrera(MainWindow.Logica.ListaCarreras[this.DataGridCarreras.SelectedIndex], posicion_seleccionada);
                 ventana.ShowDialog();
+                this.DataContext = MainWindow.Logica;
             }
         }
     }

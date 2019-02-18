@@ -29,7 +29,8 @@ namespace Proyecto_Avituallamientos.interfaz
             InitializeComponent();
             this.carrera = carrera;
             this.TextBoxNombreCarrera.Text = carrera.NombreCarrera;
-            this.avituallamiento = new Avituallamiento();
+            this.avituallamiento = new Avituallamiento(carrera);
+            this.TextBoxNombreCarrera.IsEnabled = false;
             this.posicion = -1;
             this.DataContext = this.avituallamiento;
         }

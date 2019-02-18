@@ -29,19 +29,30 @@ namespace Proyecto_Avituallamientos.interfaz
         {
             InitializeComponent();
             this.DataContext = MainWindow.Logica.ListaMateriales;
+            this.ButtonAniadirMaterial.Visibility = System.Windows.Visibility.Hidden;
+            this.LabelCantidad.Visibility = System.Windows.Visibility.Hidden;
+            this.TextBoxCantidad.Visibility = System.Windows.Visibility.Hidden;
         }
 
         public VentanaMateriales(Avituallamiento avituallamiento)
         {
             InitializeComponent();
             this.avituallamiento = avituallamiento;
-            this.DataContext = avituallamiento;
+            this.DataContext = MainWindow.Logica.ListaMateriales;
+            this.ButtonBorrarMaterial.Visibility = System.Windows.Visibility.Hidden;
+            this.ButtonEditarMaterial.Visibility = System.Windows.Visibility.Hidden;
+            this.ButtonNuevoMaterial.Visibility = System.Windows.Visibility.Hidden;
         }
 
         private void ButtonAniadirMaterial_Click(object sender, RoutedEventArgs e)
         {
-            VentanaNuevoMaterial ventana = new VentanaNuevoMaterial();
-            ventana.ShowDialog();
+            int posicion = DataGridMateriales.SelectedIndex;
+            if (posicion != -1)
+            {
+                string idMaterial = ((Material)this.DataGridMateriales.SelectedItem).Id;
+                int cantidad = Convert.ToInt32(this.TextBoxCantidad.Text);
+                this.avituallamiento.Materiales.Add(idMaterial, cantidad);
+            }
         }
 
         private void ButtonBorrarMaterial_Click(object sender, RoutedEventArgs e)
@@ -55,8 +66,17 @@ namespace Proyecto_Avituallamientos.interfaz
         {
             int posicion = DataGridMateriales.SelectedIndex;
             if (posicion != -1)
+            {
                 (new VentanaNuevoMaterial((Material)DataGridMateriales.SelectedItem, DataGridMateriales.SelectedIndex)).ShowDialog();
+                this.DataContext = MainWindow.Logica.ListaMateriales;
+            }
 
+        }
+
+        private void ButtonNuevoMaterial_Click(object sender, RoutedEventArgs e)
+        {
+            VentanaNuevoMaterial ventana = new VentanaNuevoMaterial();
+            ventana.ShowDialog();
         }
 
 

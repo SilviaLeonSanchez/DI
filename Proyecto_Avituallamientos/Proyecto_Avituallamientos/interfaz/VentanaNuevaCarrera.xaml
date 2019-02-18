@@ -9,13 +9,21 @@
                 <TextBox x:Name="TextBoxNombreCarrera" Text="{Binding Path=NombreCarrera}"  Margin="139,36,125,0" TextWrapping="Wrap" FontSize="16" VerticalContentAlignment="Center" Height="31" VerticalAlignment="Top"/>
                 <Label x:Name="LabelCarrera" Content="Carrera" Margin="10,1,10,0" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Right" Height="31" VerticalAlignment="Top" HorizontalAlignment="Center"/>
             </Grid>
-            <Grid Margin="0,81,0,0" Height="251" VerticalAlignment="Top">
+            <Grid Margin="0,81,-50,0" Height="251" VerticalAlignment="Top">
                 <Label x:Name="LabelAvituallamientos" Content="Avituallamientos" Margin="10,21,10,0" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" Height="31" VerticalAlignment="Top"/>
-                <DataGrid x:Name="DataGridAvituallamientos" ItemsSource="{Binding Path=Avituallamientos}" AutoGenerateColumns="True" CanUserAddRows="False" IsReadOnly="True" Margin="88,68,89,0" VerticalAlignment="Top" Height="173">
+                <DataGrid x:Name="DataGridAvituallamientos" ItemsSource="{Binding Path=Avituallamientos}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Margin="43,68,89,0" VerticalAlignment="Top" Height="173">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id" Binding="{Binding Path=IdAvituallamiento}" CanUserResize="False" Width="32"/>
+                        <DataGridTextColumn Header="Punto Km" Binding="{Binding Path=PuntoKm}" CanUserResize="False" Width="72"/>
+                        <DataGridTextColumn Header="Persona contacto" Binding="{Binding Path=PersonaContacto}" CanUserResize="False" Width="108"/>
+                        <DataGridTextColumn Header="Teléfono Contacto" Binding="{Binding Path=TelefonoContacto}" CanUserResize="False" Width="108"/>
+                        <DataGridTextColumn Header="Materiales" Binding="{Binding Path=Materiales.Count}" CanUserResize="False" Width="100"/>
+                    </DataGrid.Columns>
+
                 </DataGrid>
-                <Button x:Name="ButtonEditarAvituallamientos" Content="Editar" Margin="430,174,0,0" VerticalAlignment="Top" Click="EditarAvituallamientos_Click" HorizontalAlignment="Left" Width="63"/>
-                <Button x:Name="ButtonAniadirAvituallamientos" Content="Añadir" Margin="430,139,0,0" VerticalAlignment="Top" Click="AniadirAvituallamientos_Click" HorizontalAlignment="Left" Width="63"/>
-                <Button x:Name="ButtonBorrarAvituallamiento" Content="Borrar" HorizontalAlignment="Left" Margin="430,208,0,0" VerticalAlignment="Top" Width="63" Click="ButtonBorrarAvituallamiento_Click"/>
+                <Button x:Name="ButtonEditarAvituallamientos" Content="Editar" Margin="0,174,10,0" VerticalAlignment="Top" Click="EditarAvituallamientos_Click" HorizontalAlignment="Right" Width="63"/>
+                <Button x:Name="ButtonAniadirAvituallamientos" Content="Añadir" Margin="0,139,10,0" VerticalAlignment="Top" Click="AniadirAvituallamientos_Click" HorizontalAlignment="Right" Width="63"/>
+                <Button x:Name="ButtonBorrarAvituallamiento" Content="Borrar" Margin="0,208,10,0" VerticalAlignment="Top" Click="ButtonBorrarAvituallamiento_Click" HorizontalAlignment="Right" Width="63"/>
             </Grid>
         </Grid>
         <Button x:Name="ButtonGuardar" Content="Guardar" Margin="227,386,227,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Height="29" Click="ButtonGuardar_Click"/>
