@@ -7,44 +7,183 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Avituallamientos.dto
 {
-    public class Avituallamiento : ICloneable, INotifyPropertyChanged
+    public class Avituallamiento : ICloneable, INotifyPropertyChanged, IDataErrorInfo
     {
-        private static int totalAvituallamientos = 0;
-
-        public string IdCarrera { get; set; }
-        public string NombreCarrera { get; set; }
-
-        public string IdAvituallamiento { get; set; }
-        public float PuntoKm { get; set; }
-        public string PersonaContacto { get; set; }
-        public string TelefonoContacto { get; set; }
-        public Dictionary<string,int> Materiales { get; set; }
-
         public Avituallamiento(Carrera carrera)
         {
             totalAvituallamientos += 1;
-            this.IdAvituallamiento = Convert.ToString(totalAvituallamientos);
-            this.IdCarrera = carrera.IdCarrera;
-            this.NombreCarrera = carrera.NombreCarrera;
+            this.idAvituallamiento = Convert.ToString(totalAvituallamientos);
+            this.idCarrera = carrera.IdCarrera;
+            this.nombreCarrera = carrera.NombreCarrera;
+            this.Materiales = new Dictionary<Material, int>();
         }
 
-        public override string ToString()
+        public Avituallamiento(Carrera carrera, float puntoKm, string persona, string telefono)
         {
-            string info = "Carrera: " + NombreCarrera + "\tId Carrera: " + IdCarrera + "\tPunto kilometrico: " + PuntoKm + "\tId Avituallamiento: " + IdAvituallamiento + "\tPersona Contacto: " + PersonaContacto + "\tTelefono contacto: " + TelefonoContacto + "\n";
-            info += "\tMateriales: "+(Materiales.Count==0?"Ninguno":"\n");
-            foreach (var material in Materiales)
-            {
-               info += "\t"+ material.ToString() + "\n";
-            }
-            return info;
+            totalAvituallamientos += 1;
+            this.idAvituallamiento = Convert.ToString(totalAvituallamientos);
+            this.idCarrera = carrera.IdCarrera;
+            this.nombreCarrera = carrera.NombreCarrera;
+            this.Materiales = new Dictionary<Material, int>();
+            this.puntoKm = puntoKm;
+            this.personaContacto = persona;
+            this.telefonoContacto = telefono;
         }
 
+        
+        private string idCarrera;
+        public string IdCarrera
+        {
+            get
+            {
+                return idCarrera;
+            }
+            set
+            {
+                idCarrera = value;
+                this.PropertyChanged(this, new PropertyChangedEventArgs("IdCarrera"));
+            }
+        }
 
+        private string nombreCarrera;
+        public string NombreCarrera 
+        { 
+            get
+            {
+                return nombreCarrera;
+            }
+            set
+            {
+                nombreCarrera = value;
+                this.PropertyChanged(this, new PropertyChangedEventArgs("NombreCarrera"));
+            } 
+        }
+
+        private string idAvituallamiento;
+        public string IdAvituallamiento 
+        {
+            get
+            {
+                return idAvituallamiento;
+            }
+            set
+            {
+                idAvituallamiento = value;
+                this.PropertyChanged(this, new PropertyChangedEventArgs("IdAvituallamiento"));
+            }
+        }
+
+        private float puntoKm;
+        public float PuntoKm 
+        {
+            get
+            {
+                return puntoKm;
+            }
+            set
+            {
+                puntoKm = value;
+                this.PropertyChanged(this, new PropertyChangedEventArgs("PuntoKm"));
+            }
+        }
+
+        private string personaContacto;
+        public string PersonaContacto 
+        {
+            get
+            {
+                return personaContacto;
+            }
+            set
+            {
+                personaContacto = value;
+                this.PropertyChanged(this, new PropertyChangedEventArgs("PersonaContacto"));
+            }
+        }
+
+        private string telefonoContacto;
+        public string TelefonoContacto 
+        {
+            get
+            {
+                return telefonoContacto;
+            }
+            set
+            {
+                telefonoContacto = value;
+                this.PropertyChanged(this, new PropertyChangedEventArgs("TelefonoContacto"));
+            }
+        }
+
+        public Dictionary<Material,int> Materiales { get; set; }
+        private static int totalAvituallamientos = 0;
+        public event PropertyChangedEventHandler PropertyChanged;
+
+       
         public object Clone()
         {
             return this.MemberwiseClone();
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+
+
+
+
+        public string Error
+        {
+            get { return ""; }
+        }
+
+        public string this[string columnName]
+        {
+            get 
+            {
+                if (columnName == "IdCarrera")
+                {
+                   if (string.IsNullOrEmpty(idCarrera))
+                        return "El id de la carrera no puede estar vacío";
+                }
+                else if (columnName == "NombreCarrera"){
+                    if (string.IsNullOrEmpty(nombreCarrera))
+                        return "El nombre de la carrera no puede estar vacío";
+                }
+                else if (columnName == "IdAvituallamiento")
+                {
+                    if (string.IsNullOrEmpty(idAvituallamiento))
+                        return "El id del avituallamiento no puede estar vacío";
+                }
+                else if (columnName == "PuntoKm")
+                {
+                    if (puntoKm < 0)
+                        return "El punto kilométrico debe ser un número positivo";
+                }
+                else if (columnName == "PersonaContacto")
+                {
+                    if (string.IsNullOrEmpty(personaContacto))
+                        return "El nombre de la persona de contacto no puede estar vacío";
+                }
+                else if (columnName == "TelefonoContacto")
+                {
+                    if (string.IsNullOrEmpty(telefonoContacto))
+                        return "El teléfono de la persona de contacto no puede estar vacío";
+                    else if (telefonoContacto.Length != 9)
+                        return "El télefono de la persona de contacto debe tener 9 digitos";
+                    else
+                    {
+                        try
+                        {
+                            Convert.ToInt64(telefonoContacto);
+                        }
+                        catch(FormatException ex)
+                        {
+                            return "El teléfono de la persona de contacto debe estar formado solo por cifras";
+                        }
+                    }
+
+                }
+
+                return "";
+            }
+        }
     }
 }

@@ -8,44 +8,98 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Avituallamientos.dto
 {
-    public class Carrera : ICloneable, INotifyPropertyChanged
+    public class Carrera : ICloneable, INotifyPropertyChanged, IDataErrorInfo
     {
-        private static int UltimoId = 1;
-        public string IdCarrera { get; set; }
-        public string NombreCarrera { get; set; }
-        public ObservableCollection<Avituallamiento> Avituallamientos { get; set; }
-
+                
         public Carrera(string nombre)
         {
-            this.IdCarrera = UltimoId + "";
+            this.idCarrera = UltimoId + "";
             UltimoId++;
-            this.NombreCarrera = nombre;
-            this.Avituallamientos = new ObservableCollection<Avituallamiento>();
+            this.nombreCarrera = nombre;
+            this.avituallamientos = new ObservableCollection<Avituallamiento>();
         }
 
         public Carrera()
         {
-            this.IdCarrera = UltimoId + "";
+            this.avituallamientos = new ObservableCollection<Avituallamiento>();
+            this.idCarrera = UltimoId + "";
             UltimoId++;
         }
 
-        public override string ToString()
-        {
-            string info = "Id Carrera: "+IdCarrera+ "\tNombre: "+NombreCarrera;
-            info += "Avituallamientos: " + (Avituallamientos.Count == 0 ? "Ninguno" : "\n");
-            foreach (var avituallamiento in Avituallamientos)
-            {
-                info += "\tAvituallamiento: " + avituallamiento.ToString();
-            }
-            return info;
-            }
 
         public object Clone()
         {
             return this.MemberwiseClone();
         }
 
+        private string idCarrera;
+        public string IdCarrera 
+        {
+            get
+            {
+                return idCarrera;
+            }
+            set
+            {
+                idCarrera = value;
+                this.PropertyChanged(this, new PropertyChangedEventArgs("IdCarrera"));
+            }
+        }
+
+        private string nombreCarrera;
+        public string NombreCarrera 
+        {
+            get
+            {
+                return nombreCarrera;
+            }
+            set
+            {
+                nombreCarrera = value;
+                this.PropertyChanged(this, new PropertyChangedEventArgs("NombreCarrera"));
+            }
+        }
+
+        private ObservableCollection<Avituallamiento> avituallamientos;
+        public ObservableCollection<Avituallamiento> Avituallamientos 
+        {
+            get
+            {
+                return avituallamientos;
+            }
+            set
+            {
+                avituallamientos = value;
+                this.PropertyChanged(this, new PropertyChangedEventArgs("Avituallamientos"));
+            }
+        }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
+        private static int UltimoId = 1;
+
+
+        public string Error
+        {
+            get { return ""; }
+        }
+
+        public string this[string columnName]
+        {
+            get 
+            {
+                if (columnName == "IdCarrera")
+                {
+                    if (string.IsNullOrEmpty(idCarrera))
+                        return "El id de la carrera no puede estar vacío";
+                }
+                else if (columnName == "NombreCarrera")
+                {
+                    if (string.IsNullOrEmpty(nombreCarrera))
+                        return "El nombre de la carrera no puede estar vacío";
+                }
+                return "";
+            }
+        }
     }
 }

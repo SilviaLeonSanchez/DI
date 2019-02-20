@@ -1,6 +1,7 @@
 ﻿using Proyecto_Avituallamientos.dto;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,29 +21,30 @@ namespace Proyecto_Avituallamientos.interfaz
     /// </summary>
     public partial class VentanaNuevoAvituallamiento : Window
     {
-        public Carrera carrera;
-        public Avituallamiento avituallamiento;
+        public Carrera carrera { get; set; }
+        public Avituallamiento avituallamiento { get; set; }
         public int posicion;
+        public Material[] Material { get; set; }
 
         public VentanaNuevoAvituallamiento(Carrera carrera)
         {
             InitializeComponent();
-            this.carrera = carrera;
-            this.TextBoxNombreCarrera.Text = carrera.NombreCarrera;
             this.avituallamiento = new Avituallamiento(carrera);
-            this.TextBoxNombreCarrera.IsEnabled = false;
+            this.Material = avituallamiento.Materiales.Keys.ToArray();
+            this.DataContext = this;
             this.posicion = -1;
-            this.DataContext = this.avituallamiento;
+            this.carrera = carrera;
+            this.TextBoxNombreCarrera.IsEnabled = false;
         }
 
         public VentanaNuevoAvituallamiento(Carrera carrera, Avituallamiento avituallamiento, int posicion)
         {
             InitializeComponent();
-            this.avituallamiento = avituallamiento;
-            this.DataContext = this.avituallamiento;
+            this.avituallamiento = (Avituallamiento) avituallamiento.Clone();
+            this.DataContext = this;
             this.posicion = posicion;
             this.carrera = carrera;
-            this.TextBoxNombreCarrera.Text = carrera.NombreCarrera;
+            this.TextBoxNombreCarrera.IsEnabled = false;
         }
 
         private void ButtonGuardarAvituallamiento_Click(object sender, RoutedEventArgs e)
@@ -66,12 +68,13 @@ namespace Proyecto_Avituallamientos.interfaz
 
         private void ButtonAñadirMaterial_Click(object sender, RoutedEventArgs e)
         {
-
+            VentanaMateriales ventana = new VentanaMateriales(this.avituallamiento);
+            ventana.ShowDialog();
         }
 
         private void ButtonBorrarMaterial_Click(object sender, RoutedEventArgs e)
         {
-          // int posicion = this.DataGridMaterial.
+         // int posicion = this.DataGridMaterial.
            
         }
 

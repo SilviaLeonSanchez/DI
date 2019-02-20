@@ -6,24 +6,21 @@
         <Grid Margin="60,10,60,84">
             <Grid Height="106" VerticalAlignment="Bottom" Margin="0,0,0,251" HorizontalAlignment="Left" Width="479">
                 <Label x:Name="LabelNombreCarrera" Content="Nombre" Margin="0,0,247,39" FontSize="16" HorizontalContentAlignment="Right" HorizontalAlignment="Right" Width="222" Height="31" VerticalAlignment="Bottom"/>
-                <TextBox x:Name="TextBoxNombreCarrera" Margin="237,0,10,39" TextWrapping="Wrap" Text="{Binding Path=NombreCarrera}" FontSize="16" VerticalContentAlignment="Center" Height="31" VerticalAlignment="Bottom"/>
+                <TextBox x:Name="TextBoxNombreCarrera" Margin="237,0,10,39" TextWrapping="Wrap" Text="{Binding Path=avituallamiento.NombreCarrera, NotifyOnValidationError=True}" FontSize="16" VerticalContentAlignment="Center" Height="31" VerticalAlignment="Bottom"/>
                 <Label x:Name="LabelPuntoKilometricoCarrera" Content="Punto Kilometrico" Margin="10,0,247,3" FontSize="16" HorizontalContentAlignment="Right" Height="31" VerticalAlignment="Bottom"/>
-                <TextBox x:Name="TextBoxPuntoKilometricoCarrera" Margin="237,0,10,3" TextWrapping="Wrap" Text="{Binding Path=PuntoKm}" FontSize="16" VerticalContentAlignment="Center" Height="31" VerticalAlignment="Bottom"/>
+                <TextBox x:Name="TextBoxPuntoKilometricoCarrera" Margin="237,0,10,3" TextWrapping="Wrap" Text="{Binding Path=avituallamiento.PuntoKm, NotifyOnValidationError=True}" FontSize="16" VerticalContentAlignment="Center" Height="31" VerticalAlignment="Bottom"/>
                 <Label x:Name="LabelCarrera" Content="Carrera" Margin="10,1,247,0" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Right" Height="31" VerticalAlignment="Top"/>
             </Grid>
             <Grid Margin="0,0,0,142" Height="104" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="479">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
                 <Label x:Name="LabelNombrePersona" Content="Nombre" Margin="10,37,247,0" FontSize="16" HorizontalContentAlignment="Right" Height="31" VerticalAlignment="Top"/>
-                <TextBox x:Name="TextBoxNombre" Margin="237,36,10,0" TextWrapping="Wrap" Text="{Binding Path=PersonaContacto}" FontSize="16" VerticalContentAlignment="Center" Height="31" VerticalAlignment="Top"/>
+                <TextBox x:Name="TextBoxNombre" Margin="237,36,10,0" TextWrapping="Wrap" Text="{Binding Path=avituallamiento.PersonaContacto, NotifyOnValidationError=True}" FontSize="16" VerticalContentAlignment="Center" Height="31" VerticalAlignment="Top"/>
                 <Label x:Name="LabelTelefono" Content="Teléfono" Margin="10,73,247,0" FontSize="16" HorizontalContentAlignment="Right" Height="31" VerticalAlignment="Top"/>
-                <TextBox x:Name="TextBoxTelefono" Margin="237,72,10,0" TextWrapping="Wrap" Text="{Binding Path=TelefonoContacto}" FontSize="16" VerticalContentAlignment="Center" Height="31" VerticalAlignment="Top"/>
+                <TextBox x:Name="TextBoxTelefono" Margin="237,72,10,0" TextWrapping="Wrap" Text="{Binding Path=avituallamiento.TelefonoContacto, NotifyOnValidationError=True}" FontSize="16" VerticalContentAlignment="Center" Height="31" VerticalAlignment="Top"/>
                 <Label x:Name="LabelPersonaContacto" Content="Persona de contacto" Margin="10,1,247,0" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Right" Height="31" VerticalAlignment="Top"/>
             </Grid>
             <Grid Margin="0,0,-36,-10" Height="147" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="515">
                 <Label x:Name="LabelMaterialDisponible" Content="Material Disponible" Margin="10,1,247,0" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Right" Height="31" VerticalAlignment="Top"/>
-                <DataGrid x:Name="DataGridMaterial" ItemsSource="{Binding Path=Materiales}"  AutoGenerateColumns="False" Margin="10,37,0,0" VerticalAlignment="Top" Height="97" HorizontalAlignment="Left" Width="425">
+                <DataGrid x:Name="DataGridMaterial" ItemsSource="{Binding Path=avituallamiento.Materiales.Keys}"  AutoGenerateColumns="False" Margin="10,37,0,0" VerticalAlignment="Top" Height="97" HorizontalAlignment="Left" Width="425">
                     <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}" CanUserResize="False" Width="80"/>
                 </DataGrid>
                 <Button x:Name="ButtonEditarMaterial" Content="Editar" Margin="440,89,0,0" VerticalAlignment="Top" Click="EditarMaterial_Click" HorizontalAlignment="Left" Width="65"/>

@@ -5,7 +5,14 @@
     <Grid Height="451" VerticalAlignment="Top">
         <Button x:Name="ButtonAniadirMaterial" Content="Añadir" Margin="499,387,36,36" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonAniadirMaterial_Click"/>
         <Label x:Name="LabelTituloMaterial" Content="Materiales" Margin="10,29,10,0" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" Height="31" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
-        <DataGrid x:Name="DataGridMateriales" AutoGenerateColumns="True" Margin="36,75,36,135" ItemsSource="{Binding Path=ListaMateriales}" CanUserAddRows="False" IsReadOnly="True" />
+        <DataGrid x:Name="DataGridMateriales" AutoGenerateColumns="False" Margin="36,75,36,135" ItemsSource="{Binding Path=ListaMateriales}" CanUserAddRows="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}" CanUserResize="False" Width="60"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Path=Nombre}" CanUserResize="False" Width="180"/>
+                <DataGridTextColumn Header="Tipo" Binding="{Binding Path=Tipo}" CanUserResize="False" Width="180"/>
+                <DataGridTextColumn Header="Precio" Binding="{Binding Path=Precio}" CanUserResize="False" Width="120"/>
+                </DataGrid.Columns>
+        </DataGrid>
         <Button x:Name="ButtonEditarMaterial" Content="Editar" Margin="157,363,378,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonEditarMaterial_Click"/>
         <Button x:Name="ButtonBorrarMaterial" Content="Borrar" Margin="279,363,256,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonBorrarMaterial_Click"/>
         <Button x:Name="ButtonNuevoMaterial" Content="Nuevo" Margin="36,363,499,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="-2.96,0.536" Click="ButtonNuevoMaterial_Click" />

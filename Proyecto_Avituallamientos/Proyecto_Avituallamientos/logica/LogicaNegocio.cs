@@ -21,29 +21,23 @@ namespace Proyecto_Avituallamientos.logica
             ListaMateriales = new ObservableCollection<Material>();
             ListaCarreras = new ObservableCollection<Carrera>();
             TipoMaterial = new ObservableCollection<String>();
+
+            // TIPO DE MATERIAL
             TipoMaterial.Add("Bebida"); 
             TipoMaterial.Add("Comida");
             TipoMaterial.Add("Material sanitario");
 
+            // LISTA DE MATERIALES
             ListaMateriales.Add(new Material("Redbull",TipoMaterial[0], 2.00));
             ListaMateriales.Add(new Material("Panchitos", TipoMaterial[1], 1.50));
 
-            ListaCarreras.Add(new Carrera("Carrera de prueba"));
+            // CARRERAS
+            Carrera carrera = new Carrera("Carrera de prueba");
+            Avituallamiento av = new Avituallamiento(carrera, 10, "Soraya Saez", "652451254");
+            carrera.Avituallamientos.Add(av);
+            ListaCarreras.Add(carrera);
         }
-
-        public Carrera buscarCarrera(string nombre)
-        {
-            foreach (Carrera c in ListaCarreras)
-            {
-                if (c.NombreCarrera==nombre)
-                {
-                    return c;
-                }
-            }
-            return null;
-        
-        }
-
 
     }
-        }
+      
+}

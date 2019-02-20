@@ -57,10 +57,10 @@ namespace Proyecto_Avituallamientos.interfaz
 
         private void EditarAvituallamientos_Click(object sender, RoutedEventArgs e)
         {
-            int posicion_seleccionada = this.DataGridAvituallamientos.SelectedIndex;
-            if (posicion_seleccionada != -1)
+            Avituallamiento av_seleccionado =  (Avituallamiento) this.DataGridAvituallamientos.SelectedItem;
+            if (av_seleccionado != null)
             {
-                VentanaNuevoAvituallamiento ventana = new VentanaNuevoAvituallamiento(this.carrera, this.carrera.Avituallamientos[posicion_seleccionada], posicion_seleccionada);
+                VentanaNuevoAvituallamiento ventana = new VentanaNuevoAvituallamiento(this.carrera, av_seleccionado, this.carrera.Avituallamientos.IndexOf(av_seleccionado));
                 ventana.ShowDialog();
                 this.DataContext = this.carrera;
             }
@@ -74,10 +74,10 @@ namespace Proyecto_Avituallamientos.interfaz
 
         private void ButtonBorrarAvituallamiento_Click(object sender, RoutedEventArgs e)
         {
-            int posicion_seleccionada = this.DataGridAvituallamientos.SelectedIndex;
-            if (posicion_seleccionada != -1)
+            Avituallamiento av_seleccionado = (Avituallamiento)this.DataGridAvituallamientos.SelectedItem;
+            if (av_seleccionado != null)
             {
-                this.carrera.Avituallamientos.RemoveAt(posicion_seleccionada);
+                this.carrera.Avituallamientos.Remove(av_seleccionado);
             }
         }
 

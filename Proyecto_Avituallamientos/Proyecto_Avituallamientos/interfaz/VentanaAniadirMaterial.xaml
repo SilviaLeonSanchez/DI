@@ -7,7 +7,7 @@
         <Label x:Name="LabelEditarMaterial" Content="Editar Lista De Material" Margin="10,29,10,0" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" Height="31" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
         <DataGrid x:Name="DataGridEditarMateriales" Margin="79,79,78,0" VerticalAlignment="Top" Height="263" >
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{x:Null}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="Nombre Producto" HeaderStringFormat="Nombre Producto" MinWidth="30" Width="145"/>
+                <DataGridTextColumn Binding="{x:Null}" CanUserResize="False" Header="Nombre Producto" HeaderStringFormat="Nombre Producto" MinWidth="30" Width="145"/>
                 <DataGridComboBoxColumn CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="Tipo Producto" HeaderStringFormat="Tipo Producto" SelectedValueBinding="{x:Null}" SelectedItemBinding="{x:Null}" TextBinding="{x:Null}" MinWidth="30" Width="130"/>
                 <DataGridTextColumn Binding="{x:Null}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="Precio" HeaderStringFormat="Precio" Width="75"/>
                 <DataGridTextColumn x:Name="EditarMaterialAvituallamiento" Binding="{x:Null}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="Cantidad" HeaderStringFormat="Precio" Width="75"/>
