@@ -1,0 +1,7 @@
+cargar archivos que estan dentro del jar (dentro de la carpeta src)
+	getClass().getClassLoader().getResource("ruta"); 
+Es independiente del sistema operativo
+
+Para cargar cosas de fuera del jar (fuera de src)
+	File archivo = new File("ruta");
+Aqui si hay que cambiar las barras a \ si estamos en windows
