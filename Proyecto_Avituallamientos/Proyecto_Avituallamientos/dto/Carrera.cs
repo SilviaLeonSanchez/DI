@@ -88,17 +88,18 @@ namespace Proyecto_Avituallamientos.dto
         {
             get 
             {
+                string resultado = "";
                 if (columnName == "IdCarrera")
                 {
                     if (string.IsNullOrEmpty(idCarrera))
-                        return "El id de la carrera no puede estar vacío";
+                        resultado = "El id de la carrera no puede estar vacío";
                 }
                 else if (columnName == "NombreCarrera")
                 {
                     if (string.IsNullOrEmpty(nombreCarrera))
-                        return "El nombre de la carrera no puede estar vacío";
+                        resultado = "El nombre de la carrera no puede estar vacío";
                 }
-                return "";
+                return resultado;
             }
         }
     }

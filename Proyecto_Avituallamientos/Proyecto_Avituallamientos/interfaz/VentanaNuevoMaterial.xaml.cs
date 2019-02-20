@@ -22,6 +22,7 @@ namespace Proyecto_Avituallamientos.interfaz
     /// </summary>
     public partial class VentanaNuevoMaterial : Window
     {
+
         private int posicion = -1;
         public Material nuevo_material {get; set;}
         public ObservableCollection<String> TipoMaterial { get; set; }
@@ -57,6 +58,17 @@ namespace Proyecto_Avituallamientos.interfaz
                 MainWindow.Logica.ListaMateriales[posicion] = this.nuevo_material;
 
            this.Close();
+        }
+
+        private int errores;
+        private void Validation_Error(object sender, ValidationErrorEventArgs e)
+        {
+            if (e.Action == ValidationErrorEventAction.Added)
+                errores++;
+            else if (e.Action == ValidationErrorEventAction.Removed)
+                errores--;
+
+            this.ButtonGuardarMaterial.IsEnabled = (errores == 0);
         }
     }
 }

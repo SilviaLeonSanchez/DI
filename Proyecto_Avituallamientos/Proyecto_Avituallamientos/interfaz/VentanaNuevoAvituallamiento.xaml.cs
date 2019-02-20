@@ -78,6 +78,16 @@ namespace Proyecto_Avituallamientos.interfaz
            
         }
 
+        private int errores;
+        private void Validation_Error(object sender, ValidationErrorEventArgs e)
+        {
+            if (e.Action == ValidationErrorEventAction.Added)
+                errores++;
+            else if (e.Action == ValidationErrorEventAction.Removed)
+                errores--;
+
+            this.ButtonGuardarAvituallamiento.IsEnabled = (errores == 0);
+        }
 
     }
 }
