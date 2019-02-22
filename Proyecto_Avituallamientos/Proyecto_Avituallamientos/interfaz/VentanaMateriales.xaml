@@ -16,7 +16,7 @@
         <Button x:Name="ButtonEditarMaterial" Content="Editar" Margin="157,363,378,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonEditarMaterial_Click"/>
         <Button x:Name="ButtonBorrarMaterial" Content="Borrar" Margin="279,363,256,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.494,0.483" Click="ButtonBorrarMaterial_Click"/>
         <Button x:Name="ButtonNuevoMaterial" Content="Nuevo" Margin="36,363,499,60" FontSize="14" FontWeight="Bold" RenderTransformOrigin="-2.96,0.536" Click="ButtonNuevoMaterial_Click" />
-        <TextBox x:Name="TextBoxCantidad" Height="28" Margin="499,341,36,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" RenderTransformOrigin="0.235,0.393"/>
+        <TextBox x:Name="TextBoxCantidad" Height="28" Margin="499,341,36,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="0.235,0.393"/>
         <Label x:Name="LabelCantidad" Content="Cantidad" HorizontalAlignment="Left" Margin="402,341,0,0" VerticalAlignment="Top" Height="28" Width="92" FontSize="14" FontWeight="Bold"/>
     </Grid>
 </Window>
