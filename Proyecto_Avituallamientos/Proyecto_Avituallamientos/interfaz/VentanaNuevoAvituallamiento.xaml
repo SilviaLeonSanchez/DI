@@ -20,8 +20,10 @@
             </Grid>
             <Grid Margin="0,0,-36,-10" Height="147" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="515">
                 <Label x:Name="LabelMaterialDisponible" Content="Material Disponible" Margin="10,1,247,0" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Right" Height="31" VerticalAlignment="Top"/>
-                <DataGrid x:Name="DataGridMaterial" ItemsSource="{Binding Path=avituallamiento.Materiales.Keys}"  AutoGenerateColumns="False" Margin="10,37,0,0" VerticalAlignment="Top" Height="97" HorizontalAlignment="Left" Width="425">
-                    <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}" CanUserResize="False" Width="80"/>
+                <DataGrid x:Name="DataGridMaterial" ItemsSource="{Binding Path=avituallamiento.ListaMateriales}"  AutoGenerateColumns="False" Margin="10,37,0,0" VerticalAlignment="Top" Height="97" HorizontalAlignment="Left" Width="425">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}" CanUserResize="False" Width="80"/>
+                    </DataGrid.Columns>
                 </DataGrid>
                 <Button x:Name="ButtonEditarMaterial" Content="Editar" Margin="440,89,0,0" VerticalAlignment="Top" Click="EditarMaterial_Click" HorizontalAlignment="Left" Width="65"/>
                 <Button x:Name="ButtonAñadirMaterial" Content="Añadir" Margin="440,64,0,0" VerticalAlignment="Top"  HorizontalAlignment="Left" Width="65" Click="ButtonAñadirMaterial_Click"/>

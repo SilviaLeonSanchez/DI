@@ -115,7 +115,15 @@ namespace Proyecto_Avituallamientos.dto
             }
         }
 
-        public Dictionary<Material,int> Materiales { get; set; }
+        public Dictionary<Material, int> Materiales { get; set; }
+
+        public List<Material> ListaMateriales
+        {
+            get{
+                return new List<Material>(this.Materiales.Keys);
+            }
+        }
+
         private static int totalAvituallamientos = 0;
         public event PropertyChangedEventHandler PropertyChanged;
 

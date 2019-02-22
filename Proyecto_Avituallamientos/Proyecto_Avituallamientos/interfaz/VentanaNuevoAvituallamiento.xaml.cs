@@ -30,7 +30,7 @@ namespace Proyecto_Avituallamientos.interfaz
         {
             InitializeComponent();
             this.avituallamiento = new Avituallamiento(carrera);
-            this.Material = avituallamiento.Materiales.Keys.ToArray();
+            //this.Material = avituallamiento.Materiales.Keys.ToArray();
             this.DataContext = this;
             this.posicion = -1;
             this.carrera = carrera;
