@@ -55,6 +55,7 @@
     </ApplicationDefinition>
     <Compile Include="dto\Avituallamiento.cs" />
     <Compile Include="dto\Carrera.cs" />
+    <Compile Include="dto\MaterialAvituallamiento.cs" />
     <Compile Include="dto\Material.cs" />
     <Compile Include="logica\LogicaNegocio.cs" />
     <Compile Include="interfaz\VentanaNuevaCarrera.xaml.cs">

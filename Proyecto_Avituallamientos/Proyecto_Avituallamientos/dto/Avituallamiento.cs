@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace Proyecto_Avituallamientos.dto
             this.idAvituallamiento = Convert.ToString(totalAvituallamientos);
             this.idCarrera = carrera.IdCarrera;
             this.nombreCarrera = carrera.NombreCarrera;
-            this.Materiales = new Dictionary<Material, int>();
+            this.Materiales = new ObservableCollection<MaterialAvituallamiento>();
         }
 
         public Avituallamiento(Carrera carrera, float puntoKm, string persona, string telefono)
@@ -24,7 +25,7 @@ namespace Proyecto_Avituallamientos.dto
             this.idAvituallamiento = Convert.ToString(totalAvituallamientos);
             this.idCarrera = carrera.IdCarrera;
             this.nombreCarrera = carrera.NombreCarrera;
-            this.Materiales = new Dictionary<Material, int>();
+            this.Materiales = new ObservableCollection<MaterialAvituallamiento>();
             this.puntoKm = puntoKm;
             this.personaContacto = persona;
             this.telefonoContacto = telefono;
@@ -65,11 +66,6 @@ namespace Proyecto_Avituallamientos.dto
             get
             {
                 return idAvituallamiento;
-            }
-            set
-            {
-                idAvituallamiento = value;
-                this.PropertyChanged(this, new PropertyChangedEventArgs("IdAvituallamiento"));
             }
         }
 
@@ -115,15 +111,42 @@ namespace Proyecto_Avituallamientos.dto
             }
         }
 
-        public Dictionary<Material, int> Materiales { get; set; }
+        public ObservableCollection<MaterialAvituallamiento> Materiales { get; set; }
 
-        public List<Material> ListaMateriales
+        public void addMaterial(MaterialAvituallamiento nuevoMaterial)
         {
-            get{
-                return new List<Material>(this.Materiales.Keys);
+            Boolean aniadido = false;
+            foreach (MaterialAvituallamiento materialAvit in this.Materiales)
+            {
+                if (materialAvit.Material.Id.Equals(nuevoMaterial.Material.Id,StringComparison.CurrentCultureIgnoreCase)){
+                    materialAvit.aniadirMas(nuevoMaterial.Cantidad);
+                    aniadido = true;
+                }
             }
+            if (!aniadido)
+            {
+                this.Materiales.Add(nuevoMaterial);
+            }
+            this.PropertyChanged(this, new PropertyChangedEventArgs("Materiales"));
         }
 
+        public Boolean borrarMaterial(string idMaterial)
+        {
+            foreach (MaterialAvituallamiento m in this.Materiales)
+            {
+                if (m.Material.Id.Equals(idMaterial, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    Boolean resultadoOk = this.Materiales.Remove(m);
+                    if (resultadoOk)
+                    {
+                        this.PropertyChanged(this, new PropertyChangedEventArgs("Materiales"));
+                    }
+                    return resultadoOk;
+                }
+            }
+            return false;
+        }
+                
         private static int totalAvituallamientos = 0;
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -132,9 +155,6 @@ namespace Proyecto_Avituallamientos.dto
         {
             return this.MemberwiseClone();
         }
-
-
-
 
 
         public string Error

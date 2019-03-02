@@ -24,21 +24,21 @@ namespace Proyecto_Avituallamientos.interfaz
     {
 
         private int posicion = -1;
-        public Material nuevo_material {get; set;}
+        public Material nuevoMaterial {get; set;}
         public ObservableCollection<String> TipoMaterial { get; set; }
 
         public VentanaNuevoMaterial()
         {
             InitializeComponent();
             this.TipoMaterial = MainWindow.Logica.TipoMaterial;
-            this.nuevo_material = new Material();
+            this.nuevoMaterial = new Material();
             this.ComboBoxTipoMaterial.SelectedIndex = 0;
             this.DataContext = this;
         }
         public VentanaNuevoMaterial(Material material, int posicion)
         {
             InitializeComponent();
-            this.nuevo_material = (Material) material.Clone();
+            this.nuevoMaterial = (Material) material.Clone();
             this.TipoMaterial = MainWindow.Logica.TipoMaterial;
             this.ComboBoxTipoMaterial.SelectedIndex = TipoMaterial.IndexOf(material.Tipo);
             this.posicion = posicion;
@@ -53,9 +53,9 @@ namespace Proyecto_Avituallamientos.interfaz
         private void ButtonNuevoMaterial_Click(object sender, RoutedEventArgs e)
         {
             if (posicion == -1)
-                MainWindow.Logica.ListaMateriales.Add(nuevo_material);
+                MainWindow.Logica.ListaMateriales.Add(nuevoMaterial);
             else
-                MainWindow.Logica.ListaMateriales[posicion] = this.nuevo_material;
+                MainWindow.Logica.modificarMaterial(posicion, this.nuevoMaterial);
 
            this.Close();
         }

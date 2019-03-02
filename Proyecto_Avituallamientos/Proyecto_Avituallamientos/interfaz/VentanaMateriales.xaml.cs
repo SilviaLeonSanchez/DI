@@ -24,11 +24,14 @@ namespace Proyecto_Avituallamientos.interfaz
     {
 
         public Avituallamiento avituallamiento;
+        public MaterialAvituallamiento materialAvit;
 
         public VentanaMateriales()
         {
             InitializeComponent();
             this.DataContext = MainWindow.Logica;
+            this.materialAvit = new MaterialAvituallamiento();
+            this.TextBoxCantidad.DataContext = this.materialAvit;
             this.ButtonAniadirMaterial.Visibility = System.Windows.Visibility.Hidden;
             this.LabelCantidad.Visibility = System.Windows.Visibility.Hidden;
             this.TextBoxCantidad.Visibility = System.Windows.Visibility.Hidden;
@@ -39,6 +42,8 @@ namespace Proyecto_Avituallamientos.interfaz
             InitializeComponent();
             this.avituallamiento = avituallamiento;
             this.DataContext = MainWindow.Logica;
+            this.materialAvit = new MaterialAvituallamiento();
+            this.TextBoxCantidad.DataContext = this.materialAvit;
             this.ButtonBorrarMaterial.Visibility = System.Windows.Visibility.Hidden;
             this.ButtonEditarMaterial.Visibility = System.Windows.Visibility.Hidden;
             this.ButtonNuevoMaterial.Visibility = System.Windows.Visibility.Hidden;
@@ -46,58 +51,35 @@ namespace Proyecto_Avituallamientos.interfaz
 
         private void ButtonAniadirMaterial_Click(object sender, RoutedEventArgs e)
         {
-            int cantidad = 0;
-            if (string.IsNullOrEmpty(this.TextBoxCantidad.Text))
+            Material m = (Material) DataGridMateriales.SelectedItem;
+            if (m != null)
             {
-                MessageBox.Show("Introduce una cantidad");
+                this.materialAvit.Material = m;
+                this.avituallamiento.addMaterial(this.materialAvit);
+                MessageBox.Show("Material añadido correctamente");
+                this.Close();
             }
-            else
-            {
-                try
-                {
-                    cantidad = Convert.ToInt32(this.TextBoxCantidad.Text);
-                    if (cantidad <= 0)
-                    {
-                        MessageBox.Show("La cantidad debe ser un numero entero positivo");
-                    }
-                    else
-                    {
-                        Material material = (Material)DataGridMateriales.SelectedItem;
-                        if (material != null)
-                        {
-                            if (this.avituallamiento.Materiales.ContainsKey(material))
-                            {
-                                this.avituallamiento.Materiales[material] += cantidad;
-                            }
-                            else
-                            {
-                                this.avituallamiento.Materiales.Add(material, cantidad);
-                            }
-                            MessageBox.Show("Material añadido correctamente");
-                        }
-                    }
-                }
-                catch (FormatException ex)
-                {
-                    MessageBox.Show("La cantidad debe ser un numero entero positivo");
-                }
-
-            }
-
-
-
-
-
-            
-               
-            
         }
 
         private void ButtonBorrarMaterial_Click(object sender, RoutedEventArgs e)
         {
             Material material = (Material) DataGridMateriales.SelectedItem;
             if (material != null)
-                MainWindow.Logica.ListaMateriales.Remove(material);
+            {
+                Boolean resultadoOk = MainWindow.Logica.borrarMaterial(material.Id);
+                if (resultadoOk)
+                {
+                    MessageBox.Show("Se ha borrado el material");
+                }
+                else
+                {
+                    MessageBox.Show("No se ha borrado el material. Comprueba que no se esté utilizando en ningún avituallamiento.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debes seleccionar un material");
+            }
         }
 
         private void ButtonEditarMaterial_Click(object sender, RoutedEventArgs e)

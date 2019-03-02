@@ -24,27 +24,25 @@ namespace Proyecto_Avituallamientos.interfaz
         public Carrera carrera { get; set; }
         public Avituallamiento avituallamiento { get; set; }
         public int posicion;
-        public Material[] Material { get; set; }
 
         public VentanaNuevoAvituallamiento(Carrera carrera)
         {
             InitializeComponent();
-            this.avituallamiento = new Avituallamiento(carrera);
-            //this.Material = avituallamiento.Materiales.Keys.ToArray();
-            this.DataContext = this;
-            this.posicion = -1;
             this.carrera = carrera;
+            this.avituallamiento = new Avituallamiento(this.carrera);
+            this.posicion = -1;
             this.TextBoxNombreCarrera.IsEnabled = false;
+            this.DataContext = this.avituallamiento;
         }
 
         public VentanaNuevoAvituallamiento(Carrera carrera, Avituallamiento avituallamiento, int posicion)
         {
             InitializeComponent();
-            this.avituallamiento = (Avituallamiento) avituallamiento.Clone();
-            this.DataContext = this;
-            this.posicion = posicion;
             this.carrera = carrera;
+            this.avituallamiento = (Avituallamiento) avituallamiento.Clone();
+            this.posicion = posicion;
             this.TextBoxNombreCarrera.IsEnabled = false;
+            this.DataContext = this.avituallamiento;
         }
 
         private void ButtonGuardarAvituallamiento_Click(object sender, RoutedEventArgs e)
@@ -59,13 +57,7 @@ namespace Proyecto_Avituallamientos.interfaz
             }
             this.Close();
         }
-
-        private void EditarMaterial_Click(object sender, RoutedEventArgs e)
-        {
-            VentanaMateriales ventana = new VentanaMateriales();
-            ventana.ShowDialog();
-        }
-
+        
         private void ButtonAñadirMaterial_Click(object sender, RoutedEventArgs e)
         {
             VentanaMateriales ventana = new VentanaMateriales(this.avituallamiento);
@@ -74,8 +66,12 @@ namespace Proyecto_Avituallamientos.interfaz
 
         private void ButtonBorrarMaterial_Click(object sender, RoutedEventArgs e)
         {
-         // int posicion = this.DataGridMaterial.
-           
+
+            MaterialAvituallamiento m = (MaterialAvituallamiento) this.DataGridMaterial.SelectedItem;
+            if (m != null)
+            {
+                this.avituallamiento.borrarMaterial(m.Material.Id);
+            }
         }
 
         private int errores;

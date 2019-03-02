@@ -33,11 +33,6 @@ namespace Proyecto_Avituallamientos.dto
             {
                 return id;
             }
-            set
-            {
-                id = value;
-                this.PropertyChanged(this, new PropertyChangedEventArgs("Id"));
-            }
         }
 
         private string nombre;

@@ -38,6 +38,50 @@ namespace Proyecto_Avituallamientos.logica
             ListaCarreras.Add(carrera);
         }
 
+        public Boolean borrarMaterial(string id)
+        {
+            foreach (Carrera c in ListaCarreras)
+            {
+                foreach (Avituallamiento avi in c.Avituallamientos)
+                {
+                    foreach (MaterialAvituallamiento m in avi.Materiales)
+                    {
+                        if (m.Material.Id.Equals(id,StringComparison.CurrentCultureIgnoreCase))
+                        {
+                            return false;
+                        }
+
+                    }
+                }
+            }
+            foreach (Material m in this.ListaMateriales)
+            {
+                if (m.Id.Equals(id, StringComparison.CurrentCultureIgnoreCase))
+                {
+                   return this.ListaMateriales.Remove(m);
+                }
+            }
+            return false;
+        }
+
+        public void modificarMaterial(int posicion, Material material)
+        {
+            this.ListaMateriales[posicion] = material;
+            foreach (Carrera c in this.ListaCarreras)
+            {
+                foreach (Avituallamiento avi in c.Avituallamientos)
+                {
+                    foreach (MaterialAvituallamiento matAvi in avi.Materiales)
+                    {
+                        if (matAvi.Material.Id.Equals(material.Id))
+                        {
+                            matAvi.Material = material;
+                        }
+                    }
+                }
+            }
+        }
+
     }
       
 }
